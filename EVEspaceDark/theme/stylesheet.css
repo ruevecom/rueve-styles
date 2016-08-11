@@ -7,9 +7,13 @@
     --------------------------------------------------------------
 */
 /*
-@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css"); - ORIG
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
-replace `https://raw.githubusercontent.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
+	@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css"); - ORIG
+
+	@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
+
+	replace `https://raw.githubusercontent.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
+
+	+fix in `imageset.css`, `plupload.css` and `colours.css`.
 */
 @import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/common.css");
 @import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/links.css");
