@@ -9,18 +9,18 @@
 /*
 	@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css"); - ORIG
 
-	@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
+	@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
 
-	replace `https://raw.githubusercontent.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
+	replace `https://rawgit.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
 
 	+fix in `imageset.css`, `plupload.css` and `colours.css`.
 */
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/common.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/links.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/content.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/buttons.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/cp.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/forms.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/colours.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/imageset.css");
-@import url("https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/menu.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/common.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/links.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/content.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/buttons.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/cp.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/forms.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/colours.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/imageset.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/menu.css");

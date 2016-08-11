@@ -58,15 +58,15 @@
 }
 
 .file-status.file-working {
-	background: url('https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/throbber.gif');
+	background: url('https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/throbber.gif');
 }
 
 .file-status.file-uploaded {
-	background: url('https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/done.gif');
+	background: url('https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/done.gif');
 }
 
 .file-status.file-error {
-	background: url('https://raw.githubusercontent.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/error.gif');
+	background: url('https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark_left/theme/images/plupload/error.gif');
 }
 
 .file-status {
