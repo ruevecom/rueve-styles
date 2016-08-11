@@ -1,0 +1,8 @@
+/* Online image */
+.online { background-image: url("http://cdn.ru-eve.com/styles/prosilver_left/theme/en/icon_user_online.gif"); }
+
+.imageset.icon_user_online {
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver_left/theme/en/icon_user_online.gif");
+	padding-left: 1px;
+	padding-top: 1px;
+}

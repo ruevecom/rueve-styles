@@ -1,0 +1,44 @@
+<div class="navbar">
+	<div class="inner">
+
+	<ul id="nav-footer" class="linklist bulletin" role="menubar">
+		<li class="breadcrumbs">
+			<!-- IF U_SITE_HOME --><span class="crumb"><a href="{U_SITE_HOME}" data-navbar-reference="home">{L_SITE_HOME}</a></span><!-- ENDIF -->
+			<!-- EVENT overall_footer_breadcrumb_prepend -->
+			<span class="crumb"><a href="{U_INDEX}">{L_INDEX}</a> &nbsp;</span> 
+
+
+	</li>
+		<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT --><li class="small-icon"><a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="small-icon" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+<!--
+		<!-- EVENT overall_footer_timezone_before -->
+		<li class="rightside">{S_TIMEZONE}</li>
+		<!-- EVENT overall_footer_timezone_after -->
+-->
+		<!-- IF not S_IS_BOT -->
+			<li class="small-icon rightside"><a href="{U_DELETE_COOKIES}" data-ajax="true" data-refresh="true" role="menuitem">{L_DELETE_COOKIES}</a></li>
+			<!-- IF S_DISPLAY_MEMBERLIST --><li class="small-icon rightside" data-last-responsive="true"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}" role="menuitem">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_before -->
+		<!-- IF U_TEAM --><li class="small-icon rightside" data-last-responsive="true"><a href="{U_TEAM}" role="menuitem">{L_THE_TEAM}</a></li><!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_after -->
+	</ul>
+
+	</div>
+
+</div>
+</div>
+<!--  PLEASE DON'T REMOVE MY FOOTER IF YOU LIKE MY WORK -->
+
+ <div class="stopka_autora">Created by <a href="http://evildayz.com" target="_blank">evildayz.com</a> <span style="font-size:xx-small">(origin WC3 theme by <b>Matti</b> from <a href="http://www.stylesfactory.pl" target="_blank">StylesFactory.pl</a> and <a href="http://www.warlords-of-draenor.pl" target="_blank">Warlords of Draenor</a>)</span><br />
+		<!-- EVENT overall_footer_breadcrumb_append -->
+		<!-- EVENT overall_footer_copyright_prepend -->
+		 {CREDIT_LINE} 
+		<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+		<!-- EVENT overall_footer_copyright_append -->
+		<br>&copy; 2015, <a href="http://ru-eve.com">RU-EVE.com</a> • 16+
+		<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF --></div>
+
+<!-- CONTACT ME ON MY FORUMS WWW.STYLESFACTORY.PL - FREE PHPBB3.x SUPPORT! -->
+</div>
+<div class="theme_spacerx"></div>

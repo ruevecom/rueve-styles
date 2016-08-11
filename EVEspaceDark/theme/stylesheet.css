@@ -1,0 +1,18 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			prosilver (the default phpBB 3.1.x style)
+	Based on style:		
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		phpBB Limited ( https://www.phpbb.com/ )
+    --------------------------------------------------------------
+*/
+
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/common.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/links.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/content.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/buttons.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/cp.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/forms.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/colours.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/imageset.css");
+@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/menu.css");
