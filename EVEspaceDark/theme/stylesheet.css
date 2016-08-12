@@ -6,13 +6,18 @@
 	Modified by:		phpBB Limited ( https://www.phpbb.com/ )
     --------------------------------------------------------------
 */
-
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/common.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/links.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/content.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/buttons.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/cp.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/forms.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/colours.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/imageset.css");
-@import url("http://cdn.ru-eve.com/styles/EVEspaceDark/theme/menu.css");
+/*
+	@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css"); - ORIG
+	@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
+	replace `https://rawgit.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
+	+fix in `imageset.css`, `plupload.css` and `colours.css`.
+*/
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/common.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/links.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/content.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/buttons.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/cp.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/forms.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/colours.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/imageset.css");
+@import url("https://rawgit.com/ruevecom/rueve-styles/master/EVEspaceDark/theme/menu.css");
