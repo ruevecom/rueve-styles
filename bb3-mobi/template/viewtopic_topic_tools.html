@@ -1,0 +1,30 @@
+<!-- IF not S_IS_BOT -->
+<div class="inner">
+<!-- IF U_WATCH_TOPIC or U_BOOKMARK_TOPIC or U_BUMP_TOPIC or U_EMAIL_TOPIC or U_PRINT_TOPIC or S_DISPLAY_TOPIC_TOOLS -->
+<div class="rightside">
+<!-- EVENT viewtopic_topic_tools_before -->
+<!-- IF U_WATCH_TOPIC -->
+<a href="{U_WATCH_TOPIC}" title="{S_WATCH_TOPIC_TITLE}"><img src="{T_THEME_PATH}/images/icon_<!-- IF not S_WATCHING_TOPIC -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->.gif" alt="" /></a>
+<!-- ENDIF -->
+<!-- IF U_BOOKMARK_TOPIC -->
+<a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><img src="{T_THEME_PATH}/images/icon_bookmark.gif" alt="" /></a>
+<!-- ENDIF -->
+<!-- IF U_BUMP_TOPIC -->
+<a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><img src="{T_THEME_PATH}/images/icon_bump.gif" alt="" /></a><!-- ENDIF -->
+<!-- IF U_EMAIL_TOPIC -->
+<a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><img src="{T_THEME_PATH}/images/icon_sendemail.gif" alt="" /></a><!-- ENDIF -->
+<!-- IF U_PRINT_TOPIC -->
+<a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}"><img src="{T_THEME_PATH}/images/icon_print.gif" alt="" /></a><!-- ENDIF -->
+<!-- EVENT viewtopic_topic_tools_after -->
+</div>
+<!-- ENDIF -->
+<!-- IF .quickmod -->
+<select onchange="top.location=this.value" id="quickmod">
+	<option>{L_QUICK_MOD}</option>
+	<!-- BEGIN quickmod -->
+	<option value="{quickmod.LINK}">{quickmod.TITLE}</option>
+	<!-- END quickmod -->
+</select>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->

@@ -1,0 +1,24 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2"><i>{L_FRIENDS_EXPLAIN}</i></div>
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<!-- EVENT ucp_friend_list_before -->
+<div class="post bg1">{L_YOUR_FRIENDS}{L_COLON}
+<!-- IF S_USERNAME_OPTIONS -->
+	<p><i>{L_YOUR_FRIENDS_EXPLAIN}</i></p>
+	<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
+<!-- ELSE -->
+	<b>{L_NO_FRIENDS}</b>
+<!-- ENDIF -->
+</div>
+<!-- EVENT ucp_friend_list_after -->
+<div class="post bg1">{L_ADD_FRIENDS}{L_COLON}<br /><i>{L_ADD_FRIENDS_EXPLAIN}</i><br />
+<textarea name="add" id="add" rows="3" cols="25" class="inputbox">{USERNAMES}</textarea><br />
+<a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE ucp_footer.html -->

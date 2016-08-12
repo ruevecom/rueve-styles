@@ -1,0 +1,70 @@
+<!-- INCLUDE mcp_header.html -->
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+<h2>{L_TITLE}</h2>
+<div class="header">{USERNAME_FULL}</div>
+<div class="bg1">
+	<!-- IF AVATAR_IMG --><div class="bg3">{AVATAR_IMG}</div><!-- ENDIF -->
+	<!-- IF RANK_TITLE --><p>{RANK_TITLE}</p><!-- ENDIF -->
+	<!-- IF RANK_IMG -->{RANK_IMG}<!-- ENDIF -->
+</div>
+<div class="bg2">
+	<p>{L_JOINED}{L_COLON} {JOINED}</p>
+	<p>{L_TOTAL_POSTS}{L_COLON} {POSTS}</p>
+	<p>{L_WARNINGS}{L_COLON} {WARNINGS}</p>
+</div>
+<div class="panel">
+	<h3>{L_ADD_FEEDBACK}</h3>
+	<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
+	<textarea name="usernote" id="usernote" class="inputbox" cols="25" rows="3"></textarea>
+</div>
+<div class="panel submit-buttons">
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+	<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="button1" />
+	{S_FORM_TOKEN}
+</div>
+<div class="panel submit-buttons">
+{L_SEARCH_KEYWORDS}{L_COLON} <input type="search" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
+</div>
+<table class="table1" width="100%">
+<thead>
+<tr>
+	<th class="header">{L_REPORT_BY} [{TOTAL_REPORTS}]</th>
+	<!-- IF S_CLEAR_ALLOWED --><th class="header">{L_MARK}</th><!-- ENDIF -->
+</tr>
+</thead>
+<tbody>
+<!-- BEGIN usernotes -->
+<!-- IF usernotes.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+	<td>{usernotes.REPORT_BY} &raquo; {usernotes.REPORT_AT} [{usernotes.IP}]<br />
+	{L_ACTION_NOTE}{L_COLON}
+	<div class="content">{usernotes.ACTION}</div></td>
+	<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%; text-align: center;"><input type="checkbox" name="marknote[]" id="note-{usernotes.ID}" value="{usernotes.ID}" /></td><!-- ENDIF -->
+</tr>
+<!-- BEGINELSE -->
+<tr>
+	<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->2<!-- ELSE -->1<!-- ENDIF -->">{L_NO_ENTRIES}</td>
+</tr>
+<!-- END usernotes -->
+</tbody>
+</table>
+<div class="submit-buttons">
+	{S_SELECT_SORT_DAYS} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+	<input type="submit" name="sort" value="{L_GO}" class="button2" />
+</div>
+<!-- IF S_CLEAR_ALLOWED -->
+<div class="rightside"><a href="#" onclick="marklist('mcp', 'marknote', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('mcp', 'marknote', false); return false;">{L_UNMARK_ALL}</a></div>
+<!-- ENDIF -->
+<hr />
+<div class="action-bar">
+<!-- IF .pagination -->
+	<div class="rightside pagination">
+		<!-- INCLUDE pagination.html -->
+	</div>
+	<!-- ENDIF -->
+	<!-- IF S_CLEAR_ALLOWED -->
+	<input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+	&nbsp;<input class="button1" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
+	<!-- ENDIF -->
+</div>
+</form>
+<!-- INCLUDE mcp_footer.html -->

@@ -1,0 +1,27 @@
+<!-- BEGIN forumrow -->
+<!-- IF forumrow.S_IS_CAT and forumrow.S_ROW_COUNT > 21 -->
+<!-- DEFINE $COLLAPSE = 1 -->
+<!-- ENDIF -->
+<!-- IF (forumrow.S_IS_CAT and not forumrow.S_FIRST_ROW) or forumrow.S_NO_CAT  --></div><!-- ENDIF -->
+<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW or forumrow.S_NO_CAT  -->
+<div class="forabg">
+<div class="header">
+<!-- EVENT forumlist_body_category_header_row_prepend -->
+<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
+<!-- EVENT forumlist_body_category_header_row_append -->
+</div>
+<!-- ENDIF -->
+<!-- IF not forumrow.S_IS_CAT and not $COLLAPSE -->
+<div class="row">
+<div class="inner">
+<!-- IF forumrow.FORUM_IMAGE --><span class="avatar">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
+<span class="small-icon"><img src="{T_THEME_PATH}/images/subforum_<!-- IF forumrow.S_UNREAD_FORUM -->un<!-- ENDIF -->read.gif" alt=""/></span><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a>
+<!-- IF not S_IS_BOT --><!-- IF forumrow.S_IS_LINK --><span class="posts">[{forumrow.CLICKS}]</span><!-- ELSE --><span class="posts">[{forumrow.TOPICS}/{forumrow.POSTS}]</span><!-- ENDIF --><!-- ENDIF -->
+<!-- IF forumrow.S_DISPLAY_SUBJECT --><br /><a href="{forumrow.U_LAST_POST}">{forumrow.LAST_POST_SUBJECT_TRUNCATED}</a><!-- ENDIF -->
+</div>
+</div>
+<!-- ENDIF -->
+<!-- IF forumrow.S_LAST_ROW --></div><!-- ENDIF -->
+<!-- BEGINELSE -->
+<div class="row"><b>{L_NO_FORUMS}</b></div>
+<!-- END forumrow -->

@@ -1,0 +1,107 @@
+<!-- INCLUDE overall_header.html -->
+<!-- EVENT viewforum_forum_title_before -->
+<h2><!-- EVENT viewforum_forum_name_prepend -->{FORUM_NAME}<!-- EVENT viewforum_forum_name_append --></h2>
+<!-- EVENT viewforum_forum_title_after -->
+<!-- IF MODERATORS -->
+<p><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->{L_COLON} {MODERATORS}</p><!-- ENDIF -->
+<!-- IF S_FORUM_RULES -->
+<div class="panel<!-- IF U_FORUM_RULES --> bg1<!-- ENDIF -->">
+<!-- IF U_FORUM_RULES -->
+<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
+<!-- ELSE -->
+<b>{L_FORUM_RULES}</b><br />{FORUM_RULES}
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<!-- IF S_HAS_SUBFORUM -->
+<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+<p class="mark-read"><a href="{U_MARK_FORUMS}"><i>{L_MARK_SUBFORUMS_READ}</i></a></p><!-- ENDIF -->
+<!-- INCLUDE forumlist_body.html -->
+<!-- ENDIF -->
+<!-- IF S_NO_READ_ACCESS --><div class="panel"><b>{L_NO_READ_ACCESS}</b></div><!-- ENDIF -->
+<!-- IF not S_IS_BOT and U_MARK_TOPICS and .topicrow -->
+<p class="mark-read"><a href="{U_MARK_TOPICS}"><i>{L_MARK_TOPICS_READ}</i></a></p><!-- ENDIF -->
+<!-- IF S_DISPLAY_POST_INFO -->
+<div class="action-bar">
+<!-- IF not S_IS_BOT -->
+<!-- EVENT viewforum_buttons_top_before -->
+<a href="{U_POST_NEW_TOPIC}" class="button">
+<!-- IF S_IS_LOCKED -->{L_BUTTON_FORUM_LOCKED}<!-- ELSE -->{L_BUTTON_NEW_TOPIC}<!-- ENDIF --></a>
+<!-- EVENT viewforum_buttons_top_after -->
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_SEARCHBOX -->
+<div class="rightside" role="search">
+	<form method="get" id="forum-search" action="{S_SEARCHBOX_ACTION}">
+	<div>
+		<input class="inputbox autowidth" type="search" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}" />
+		<input type="submit" class="button2" title="{L_SEARCH}" value="{L_SEARCH}">
+		{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+	</div>
+	</form>
+</div>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<!-- BEGIN topicrow -->
+<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW --></div><!-- ENDIF -->
+<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
+<div class="forumbg">
+<div class="header"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div><!-- ENDIF -->
+<div class="small-icon row<!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<div class="inner">
+	<!-- IF topicrow.S_UNREAD_TOPIC and not S_IS_BOT -->
+	<a href="{topicrow.U_NEWEST_POST}"><img src="{T_THEME_PATH}/images/icon_post_target_unread.gif" alt=""/></a>
+	<!-- ENDIF -->
+	<!-- EVENT topiclist_row_prepend -->
+	<!-- IF topicrow.S_HAS_POLL --><img src="{T_THEME_PATH}/images/icon_topic_poll.gif" alt=""/><!-- ENDIF -->
+	<!-- IF topicrow.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF -->
+	<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+	<a href="{topicrow.U_MCP_QUEUE}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_unapproved.gif" alt=""/></a><!-- ENDIF -->
+	<!-- IF topicrow.S_TOPIC_DELETED -->
+	<a href="{topicrow.U_MCP_QUEUE}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_deleted.png" alt=""/></a><!-- ENDIF -->
+	<!-- IF topicrow.S_TOPIC_REPORTED -->
+	<a href="{topicrow.U_MCP_REPORT}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_reported.gif" alt=""/></a><!-- ENDIF -->
+	<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> <span class="posts">[<!-- IF topicrow.REPLIES -->{topicrow.REPLIES}<!-- ELSE -->1<!-- ENDIF -->]</span>
+	<!-- IF not S_IS_BOT -->
+	<br /><!-- IF topicrow.TOPIC_AUTHOR != topicrow.LAST_POST_AUTHOR --><span<!-- IF topicrow.TOPIC_AUTHOR_COLOUR --> style="color:{topicrow.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.TOPIC_AUTHOR}</span> / <!-- ENDIF --><span<!-- IF topicrow.LAST_POST_AUTHOR_COLOUR --> style="color:{topicrow.LAST_POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span> &laquo; <a href="{topicrow.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{topicrow.LAST_POST_TIME}</a>
+	<!-- ENDIF -->
+	<!-- EVENT topiclist_row_append -->
+	</div>
+</div>
+<!-- IF topicrow.S_LAST_ROW -->
+</div>
+<!-- ENDIF -->
+<!-- BEGINELSE -->
+<!-- IF S_IS_POSTABLE --><div class="panel"><b>{L_NO_TOPICS}</b></div><!-- ENDIF -->
+<!-- END topicrow -->
+<!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
+<!-- IF S_SELECT_SORT_DAYS -->
+<form method="post" action="{S_FORUM_ACTION}">
+<div class="post bg3 dropdown-container">
+<!-- IF not S_IS_BOT -->
+<a href="#" title="{L_DISPLAY_TOPICS}" class="dropdown-trigger">{L_SORT_BY}</a>
+<div class="dropdown hidden">{S_SELECT_SORT_DAYS} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+<input type="submit" name="sort" value="{L_GO}" class="button2" /></div>
+<!-- ENDIF -->
+</div>
+</form>
+<!-- ENDIF -->
+<div class="action-bar">
+<!-- IF .pagination -->
+<div class="pagination rightside">
+<!-- INCLUDE pagination.html -->
+</div>
+<!-- ENDIF -->
+<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+<div class="buttons">
+	<!-- EVENT viewforum_buttons_bottom_before -->
+	<a href="{U_POST_NEW_TOPIC}" class="button">
+	<!-- IF S_IS_LOCKED -->{L_BUTTON_FORUM_LOCKED}<!-- ELSE -->{L_BUTTON_NEW_TOPIC}<!-- ENDIF --></a>
+	<!-- EVENT viewforum_buttons_bottom_after -->
+</div>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE jumpbox.html -->
+<!-- IF S_DISPLAY_ONLINE_LIST -->{LOGGED_IN_USER_LIST}<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

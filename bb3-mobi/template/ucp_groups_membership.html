@@ -1,0 +1,96 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<table class="table1" width="100%">
+<thead>
+	<tr>
+		<th class="header">{L_USERGROUPS}</th>
+		<th class="header">{L_SELECT}</th>
+	</tr>
+</thead>
+<tbody>
+<!-- DEFINE $SHOW_BUTTONS = 0 -->
+<!-- IF .leader -->
+	<tr class="bg3"><td colspan="2">{L_GROUP_LEADER}</td></tr>
+<!-- BEGIN leader -->
+<!-- IF not leader.GROUP_SPECIAL -->
+	<!-- DEFINE $SHOW_BUTTONS = 1 -->
+<!-- ENDIF -->
+<tr class="row <!-- IF notification_types.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+	<td><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF -->
+	<a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+	<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
+	<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF --></td>
+	<td class="mark"><input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+</tr>
+<!-- END leader -->
+<!-- ENDIF -->
+
+<!-- IF .member -->
+<tr class="bg3"><td colspan="2">{L_GROUP_MEMBER}</td></tr>
+<!-- BEGIN member -->
+<!-- IF not member.GROUP_SPECIAL -->
+	<!-- DEFINE $SHOW_BUTTONS = 1 -->
+<!-- ENDIF -->
+<tr class="row<!-- IF member.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<td><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF -->
+	<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a>
+	<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
+	<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF --></td>
+	<td class="mark"><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+</tr>
+<!-- END member -->
+<!-- ENDIF -->
+
+<!-- IF .pending -->
+<tr class="bg3"><td colspan="2">{L_GROUP_PENDING}</td></tr>
+<!-- BEGIN pending -->
+<!-- IF not pending.GROUP_SPECIAL -->
+	<!-- DEFINE $SHOW_BUTTONS = 1 -->
+<!-- ENDIF -->
+<tr class="row<!-- IF pending.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<td><a href="{pending.U_VIEW_GROUP}" class="forumtitle"<!-- IF pending.GROUP_COLOUR --> style="color:#{pending.GROUP_COLOUR}"<!-- ENDIF -->>{pending.GROUP_NAME}</a>
+	<!-- IF pending.GROUP_DESC --><br />{pending.GROUP_DESC}<!-- ENDIF -->
+	<!-- IF not pending.GROUP_SPECIAL --><br /><i>{pending.GROUP_STATUS}</i><!-- ENDIF --></td>
+	<td class="mark"><input type="radio" name="selected" value="{pending.GROUP_ID}" <!-- IF pending.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+</tr>
+<!-- END pending -->
+<!-- ENDIF -->
+
+<!-- IF .nonmember -->
+<tr class="bg3"><td colspan="2">{L_GROUP_NONMEMBER}</td></tr>
+<!-- BEGIN nonmember -->
+<!-- IF nonmember.S_CAN_JOIN -->
+	<!-- DEFINE $SHOW_BUTTONS = 1 -->
+<!-- ENDIF -->
+<tr class="row<!-- IF nonmember.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<td><a href="{nonmember.U_VIEW_GROUP}" class="forumtitle"<!-- IF nonmember.GROUP_COLOUR --> style="color:#{nonmember.GROUP_COLOUR}"<!-- ENDIF -->>{nonmember.GROUP_NAME}</a>
+	<!-- IF nonmember.GROUP_DESC --><br />{nonmember.GROUP_DESC}<!-- ENDIF -->
+	<!-- IF not nonmember.GROUP_SPECIAL --><br /><i>{nonmember.GROUP_STATUS}</i><!-- ENDIF --></td>
+	<td class="mark"><input type="radio" name="selected" value="{nonmember.GROUP_ID}" <!-- IF not nonmember.S_CAN_JOIN -->disabled="disabled"<!-- ENDIF --> /></td>
+</tr>
+<!-- END nonmember -->
+<!-- ENDIF -->
+</tbody>
+</table>
+
+<!-- IF S_CHANGE_DEFAULT or $SHOW_BUTTONS eq 1 -->
+<div class="action-bar">
+<!-- IF $SHOW_BUTTONS eq 1 -->
+<div class="rightside">
+<select name="action" id="action">
+	<option value="join">{L_JOIN_SELECTED}</option>
+	<option value="resign">{L_RESIGN_SELECTED}</option>
+	<option value="demote">{L_DEMOTE_SELECTED}</option>
+</select>
+<input class="button2" type="submit" name="submit" value="{L_SUBMIT}" />
+{S_FORM_TOKEN}</div>
+<!-- ENDIF -->
+<!-- IF S_CHANGE_DEFAULT -->
+<input class="button2" type="submit" name="change_default" value="{L_CHANGE_DEFAULT_GROUP}" />
+{S_FORM_TOKEN}
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+</form>
+<div class="panel"><i>{L_GROUPS_EXPLAIN}</i></div>
+<!-- INCLUDE ucp_footer.html -->

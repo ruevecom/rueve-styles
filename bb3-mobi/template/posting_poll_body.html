@@ -1,0 +1,25 @@
+<div class="panel bg3" id="poll-panel">
+<!-- IF S_SHOW_POLL_BOX -->
+<i>{L_ADD_POLL_EXPLAIN}</i>
+<!-- ENDIF -->
+<!-- IF S_POLL_DELETE -->
+<p><input type="checkbox" name="poll_delete" id="poll_delete"<!-- IF S_POLL_DELETE_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_POLL_DELETE}</p>
+<!-- ENDIF -->
+<!-- IF S_SHOW_POLL_BOX -->
+<p>{L_POLL_QUESTION}{L_COLON}<br />
+<input type="text" name="poll_title" id="poll_title" maxlength="255" value="{POLL_TITLE}" class="inputbox" /></p>
+<p>{L_POLL_OPTIONS}{L_COLON}<br /><i>{L_POLL_OPTIONS_EXPLAIN}</i><br />
+<textarea name="poll_option_text" id="poll_option_text" rows="4" cols="25" class="inputbox">{POLL_OPTIONS}</textarea></p>
+<hr class="dashed" />
+<p>{L_POLL_MAX_OPTIONS}{L_COLON} <input type="number" min="0" max="999" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="inputbox autowidth" />
+<i>({L_POLL_MAX_OPTIONS_EXPLAIN})</i></p>
+<p>{L_POLL_FOR}{L_COLON} <input type="number" min="0" max="999" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="inputbox autowidth" /> {L_DAYS}
+<i>({L_POLL_FOR_EXPLAIN})</i></p>
+<!-- IF S_POLL_VOTE_CHANGE -->
+<hr class="dashed" />
+<p><input type="checkbox" id="poll_vote_change" name="poll_vote_change"{VOTE_CHANGE_CHECKED} /> {L_POLL_VOTE_CHANGE}
+<i>({L_POLL_VOTE_CHANGE_EXPLAIN})</i></p>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- EVENT posting_poll_body_options_after -->
+</div>

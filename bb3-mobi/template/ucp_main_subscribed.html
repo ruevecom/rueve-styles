@@ -1,0 +1,70 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2"><i>{L_WATCHED_EXPLAIN}</i></div>
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<table class="table1" width="100%">
+<tr>
+	<th class="header">{L_TITLE}</th>
+	<th class="header">{L_MARK}</th>
+</tr>
+<!-- IF .forumrow -->
+<tr class="bg3"><td class="post" colspan="2">{L_WATCHED_FORUMS}</td></tr>
+<!-- BEGIN forumrow -->
+<tr class="row<!-- IF forumrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<td><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />{forumrow.FORUM_DESC}
+	<!-- IF forumrow.LAST_POST_TIME --><p>{forumrow.LAST_POST_AUTHOR_FULL} &laquo; <a href="{topicrow.U_LAST_POST}">{forumrow.LAST_POST_TIME}</a></p><!-- ENDIF --></td>
+	<td class="mark"><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></td>
+</tr>
+<!-- END forumrow -->
+<!-- ELSEIF S_FORUM_NOTIFY -->
+<tr class="bg3"><td class="post" colspan="2">{L_WATCHED_FORUMS}</td></tr>
+<tr class="bg1"><td class="post error" colspan="2">{L_NO_WATCHED_FORUMS}</td></tr>
+<!-- ENDIF -->
+<!-- IF .topicrow -->
+<tr class="post bg3"><td colspan="2">{L_WATCHED_TOPICS}</td></tr>
+<!-- BEGIN topicrow -->
+<tr class="row<!-- IF topicrow.S_TOPIC_REPORTED --> bg3<!-- ELSEIF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+<td>
+	<!-- IF topicrow.TOPIC_ICON_IMG --><span class="avatar"><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" alt="" title="{topicrow.TOPIC_FOLDER_IMG_ALT}" /></span><!-- ENDIF -->
+	<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}"><img src="{T_THEME_PATH}/images/icon_post_target_unread.gif" alt="" /></a><!-- ENDIF -->
+	<!-- IF topicrow.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF -->
+	<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_unapproved.gif" alt=""/></a><!-- ENDIF -->
+	<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_reported.gif" alt=""/></a><!-- ENDIF -->
+	<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a><br />
+	<!-- IF topicrow.TOPIC_AUTHOR != topicrow.LAST_POST_AUTHOR -->{topicrow.TOPIC_AUTHOR_FULL} / <!-- ENDIF -->{topicrow.LAST_POST_AUTHOR_FULL} &laquo; <a href="{topicrow.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{topicrow.LAST_POST_TIME}</a>
+	<!-- IF .topicrow.pagination -->
+	<div class="rightside pagination">
+		<!-- BEGIN pagination -->
+			<!-- IF topicrow.pagination.S_IS_PREV -->
+			<!-- ELSEIF topicrow.pagination.S_IS_CURRENT --><span class="active button">{topicrow.pagination.PAGE_NUMBER}</span>
+			<!-- ELSEIF topicrow.pagination.S_IS_ELLIPSIS --><span class="ellipsis button">{L_ELLIPSIS}</span>
+			<!-- ELSEIF topicrow.pagination.S_IS_NEXT -->
+			<!-- ELSE --><a href="{topicrow.pagination.PAGE_URL}" class="button">{topicrow.pagination.PAGE_NUMBER}</a> 
+			<!-- ENDIF -->
+		<!-- END pagination -->
+	</div>
+	<!-- ENDIF -->
+</td>
+<td class="mark"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></td>
+</tr>
+<!-- END topicrow -->
+<!-- ELSEIF S_TOPIC_NOTIFY -->
+<tr class="bg3"><td class="post" colspan="2">{L_WATCHED_TOPICS}</td></tr>
+<tr class="bg1"><td class="post error" colspan="2">{L_NO_WATCHED_TOPICS}</td></tr>
+<!-- ENDIF -->
+</table>
+<!-- IF .topicrow or .forumrow -->
+<!-- IF .pagination -->
+<div class="action-bar">
+	<div class="rightside pagination">
+		<!-- INCLUDE pagination.html -->
+	</div>
+</div>
+<!-- ENDIF -->
+<div class="inner">
+<input type="submit" name="unwatch" value="{L_UNWATCH_MARKED}" class="button2" />
+<div class="rightside"><a href="#" onclick="marklist('ucp', 't', true); marklist('ucp', 'f', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 't', false); marklist('ucp', 'f', false); return false;">{L_UNMARK_ALL}</a></div>
+	{S_FORM_TOKEN}
+</div>
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE ucp_footer.html -->

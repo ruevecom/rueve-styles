@@ -1,0 +1,80 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<div class="bg3">
+<div class="header">{L_TITLE}</div>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<!-- EVENT ucp_prefs_personal_prepend -->
+<div class="post bg1">{L_SHOW_EMAIL}{L_COLON}<br />
+<input type="radio" name="viewemail" value="1"<!-- IF S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="viewemail" value="0"<!-- IF not S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<div class="post bg1">{L_ADMIN_EMAIL}{L_COLON}<br />
+<input type="radio" name="massemail" value="1"<!-- IF S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="massemail" id="massemail0" value="0"<!-- IF not S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<div class="post bg1">{L_ALLOW_PM}{L_COLON}<br /><i>{L_ALLOW_PM_EXPLAIN}</i><br />
+<input type="radio" name="allowpm" value="1"<!-- IF S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="allowpm" value="0"<!-- IF not S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<!-- IF S_CAN_HIDE_ONLINE -->
+<div class="post bg1">{L_HIDE_ONLINE}{L_COLON}<br /><i>{L_HIDE_ONLINE_EXPLAIN}</i><br />
+<input type="radio" name="hideonline" value="1"<!-- IF S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="hideonline" value="0"<!-- IF not S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<!-- ENDIF -->
+<!-- IF S_SELECT_NOTIFY -->
+<div class="post bg1">{L_NOTIFY_METHOD}{L_COLON}<br />
+<input type="radio" name="notifymethod" value="0"<!-- IF S_NOTIFY_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_EMAIL} 
+<input type="radio" name="notifymethod" value="1"<!-- IF S_NOTIFY_IM --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_IM}
+<input type="radio" name="notifymethod" id="notifymethod2" value="2"<!-- IF S_NOTIFY_BOTH --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_BOTH}</div>
+<!-- ENDIF -->
+<!-- IF S_MORE_LANGUAGES -->
+<div class="post bg1">{L_BOARD_LANGUAGE}{L_COLON}<br />
+<select name="lang" id="lang">{S_LANG_OPTIONS}</select></div>
+<!-- ENDIF -->
+<!-- IF S_STYLE_OPTIONS and S_MORE_STYLES -->
+<div class="post bg1">{L_BOARD_STYLE}{L_COLON}<br />
+<select name="user_style" id="user_style">{S_STYLE_OPTIONS}</select></div>
+<!-- ENDIF -->
+<!-- INCLUDE timezone_option.html -->
+<div class="post bg1">{L_BOARD_DATE_FORMAT}{L_COLON}<br /><i>{L_BOARD_DATE_FORMAT_EXPLAIN}</i><br />
+<select name="dateoptions" id="dateoptions" onchange="if(this.value=='custom'){phpbb.toggleDisplay('custom_date',1);}else{phpbb.toggleDisplay('custom_date',-1);} if (this.value == 'custom') { document.getElementById('dateformat').value = default_dateformat; } else { document.getElementById('dateformat').value = this.value; }">
+{S_DATEFORMAT_OPTIONS}
+</select>
+</div>
+<div class="post bg1" id="custom_date" style="display:none;"><input type="text" name="dateformat" id="dateformat" value="{DATE_FORMAT}" maxlength="30" class="inputbox narrow" style="margin-top: 3px;" /></div>
+<!-- EVENT ucp_prefs_personal_append -->
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<script type="text/javascript">
+// <![CDATA[
+var date_format = '{A_DATE_FORMAT}';
+var default_dateformat = '{A_DEFAULT_DATEFORMAT}';
+function customDates()
+{
+	var e = document.getElementById('dateoptions');
+	e.selectedIndex = e.length - 1;
+	// Loop and match date_format in menu
+	for (var i = 0; i < e.length; i++)
+	{
+		if (e.options[i].value == date_format)
+		{
+			e.selectedIndex = i;
+			break;
+		}
+	}
+	// Show/hide custom field
+	if (e.selectedIndex == e.length - 1)
+	{
+		phpbb.toggleDisplay('custom_date',1);
+	}
+	else
+	{
+		phpbb.toggleDisplay('custom_date',-1);
+	}
+}
+window.onload = customDates;
+// ]]>
+</script>
+<!-- INCLUDE ucp_footer.html -->

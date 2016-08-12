@@ -1,0 +1,89 @@
+<!-- INCLUDE overall_header.html -->
+<h2>{PAGE_TITLE}</h2>
+<!-- EVENT memberlist_view_content_prepend -->
+<form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
+
+<div class="panel">
+<img src="{T_THEME_PATH}/images/icon_<!-- IF S_ONLINE -->online<!-- ELSE -->offline<!-- ENDIF -->.gif" alt="" />
+<!-- IF USER_COLOR --><b style="color: {USER_COLOR};"><!-- ELSE --><b><!-- ENDIF -->{USERNAME}</b>
+<!-- IF RANK_TITLE --> <i>[{RANK_TITLE}]</i><!-- ENDIF -->
+<div class="post bg2">
+<!-- IF AVATAR_IMG -->
+<!-- EVENT memberlist_view_rank_avatar_before -->
+{AVATAR_IMG}
+<!-- EVENT memberlist_view_rank_avatar_after -->
+<!-- ELSE -->
+<!-- EVENT memberlist_view_rank_no_avatar_before -->
+<img src="{T_THEME_PATH}/images/no_avatar.gif" alt="no_avatar" />
+<!-- EVENT memberlist_view_rank_no_avatar_after -->
+<!-- ENDIF -->
+</div>
+<!-- IF RANK_IMG --><p>{RANK_IMG}</p><!-- ENDIF -->
+<!-- IF S_USER_INACTIVE --><p><b>{L_USER_IS_INACTIVE}{L_COLON}</b> {USER_INACTIVE_REASON}</p><!-- ENDIF -->
+<!-- IF AGE !== '' --><p><b>{L_AGE}{L_COLON}</b> {AGE}</p><!-- ENDIF -->
+<!-- BEGIN custom_fields -->
+<!-- IF not custom_fields.S_PROFILE_CONTACT -->
+<p><b>{custom_fields.PROFILE_FIELD_NAME}{L_COLON}</b> {custom_fields.PROFILE_FIELD_VALUE}</p>
+<!-- ENDIF -->
+<!-- END custom_fields -->
+<!-- IF SIGNATURE --><div class="post bg3"><b>{L_SIGNATURE}{L_COLON}</b><br />{SIGNATURE}</div><!-- ENDIF -->
+</div>
+
+<div class="panel">
+<!-- IF S_USER_LOGGED_IN and S_ZEBRA -->
+<!-- IF U_REMOVE_FRIEND -->
+<div class="row bg3"><a href="{U_REMOVE_FRIEND}">{L_REMOVE_FRIEND}</a></div>
+<!-- ELSEIF U_REMOVE_FOE -->
+<div class="row bg3"><a href="{U_REMOVE_FOE}">{L_REMOVE_FOE}</a></div>
+<!-- ELSE -->
+<!-- IF U_ADD_FRIEND --><div class="row bg3"><a href="{U_ADD_FRIEND}">{L_ADD_FRIEND}</a></div><!-- ENDIF -->
+<!-- IF U_ADD_FOE --><div class="row bg3"><a href="{U_ADD_FOE}">{L_ADD_FOE}</a></div><!-- ENDIF -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF U_EDIT_SELF --><div class="row bg3"><a href="{U_EDIT_SELF}">{L_EDIT_PROFILE}</a></div><!-- ENDIF -->
+<!-- IF U_USER_ADMIN --><div class="row bg3"><a href="{U_USER_ADMIN}">{L_USER_ADMIN}</a></div><!-- ENDIF -->
+<!-- IF U_USER_BAN --><div class="row bg3"><a href="{U_USER_BAN}">{L_USER_BAN}</a></div><!-- ENDIF -->
+<!-- IF U_SWITCH_PERMISSIONS --><div class="row bg3"><a href="{U_SWITCH_PERMISSIONS}">{L_USE_PERMISSIONS}</a></div><!-- ENDIF -->
+</div>
+
+<!-- EVENT memberlist_view_contact_before -->
+<div class="panel"><b>{L_CONTACT_USER}</b>
+<!-- IF U_EMAIL --><div class="row bg2"><a href="{U_EMAIL}">{L_SEND_EMAIL_USER}</a></div><!-- ENDIF -->
+<!-- IF U_PM --><div class="row bg2"><a href="{U_PM}">{L_SEND_PRIVATE_MESSAGE}</a></div><!-- ENDIF -->
+<!-- IF U_JABBER and S_JABBER_ENABLED --><div class="row bg2"><a href="{U_JABBER}" onclick="popup(this.href, 750, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></div><!-- ELSEIF USER_JABBER --><div class="row bg2">{USER_JABBER}</div><!-- ENDIF -->
+<!-- BEGIN custom_fields -->
+<!-- IF custom_fields.S_PROFILE_CONTACT -->
+<!-- IF custom_fields.PROFILE_FIELD_CONTACT -->
+<div class="row bg2"><a href="{custom_fields.PROFILE_FIELD_CONTACT}">{custom_fields.PROFILE_FIELD_DESC}</a></div>
+<!-- ELSE -->
+<div class="row bg2">{custom_fields.PROFILE_FIELD_VALUE}</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- END custom_fields -->
+<!-- IF S_PROFILE_FIELD1 -->
+<!-- NOTE: Use a construct like this to include admin defined profile fields. Replace FIELD1 with the name of your field. -->
+<div class="row bg2">{PROFILE_FIELD1_VALUE}</div>
+<!-- ENDIF -->
+</div>
+<!-- EVENT memberlist_view_contact_after -->
+
+<div class="panel"><b>{L_USER_FORUM}</b>
+<!-- EVENT memberlist_view_user_statistics_before -->
+<p class="post bg1">{L_JOINED}{L_COLON} <i>{JOINED}</i></p>
+<p class="post bg1">{L_LAST_ACTIVE}{L_COLON} <i>{LAST_ACTIVE}</i></p>
+<!-- IF S_WARNINGS -->
+<p class="post bg1">{L_WARNINGS}{L_COLON} <b>{WARNINGS}</b><!-- IF U_NOTES or U_WARN --><br /><i><!-- IF U_NOTES --><a href="{U_NOTES}">{L_VIEW_NOTES}</a><!-- ENDIF --> <!-- IF U_WARN --><!-- IF U_NOTES --> | <!-- ENDIF --><a href="{U_WARN}">{L_WARN_USER}</a><!-- ENDIF --></i><!-- ENDIF --></p>
+<!-- ENDIF -->
+<p class="post bg1">{L_TOTAL_POSTS}{L_COLON} <b><!-- IF S_DISPLAY_SEARCH --><a href="{U_SEARCH_USER}" title="{L_SEARCH_USER_POSTS}">{POSTS}</a><!-- ELSE -->{POSTS}<!-- ENDIF --></b> <i><!-- IF POSTS_PCT --><br />({POSTS_PCT} / {POSTS_DAY})<!-- ENDIF -->
+<!-- IF POSTS_IN_QUEUE and U_MCP_QUEUE --><br />(<a href="{U_MCP_QUEUE}">{L_POSTS_IN_QUEUE}</a>)<!-- ELSEIF POSTS_IN_QUEUE --><br />({L_POSTS_IN_QUEUE})<!-- ENDIF --></i></p>
+<!-- IF S_SHOW_ACTIVITY and POSTS -->
+<p class="post bg1">{L_ACTIVE_IN_FORUM}{L_COLON} <i><!-- IF ACTIVE_FORUM != '' --><b><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></b><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})<!-- ELSE --> - <!-- ENDIF --></i></p>
+<p class="post bg1">{L_ACTIVE_IN_TOPIC}{L_COLON} <i><!-- IF ACTIVE_TOPIC != '' --><b><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></b><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})<!-- ELSE --> - <!-- ENDIF --></i></p>
+<!-- ENDIF -->
+<!-- EVENT memberlist_view_user_statistics_after -->
+</div>
+
+<!-- IF S_GROUP_OPTIONS --><div class="submit-buttons">{L_USERGROUPS}{L_COLON} <select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="button2" /></div><!-- ENDIF -->
+</form>
+<!-- EVENT memberlist_view_content_append -->
+<!-- INCLUDE overall_footer.html -->

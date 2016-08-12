@@ -1,0 +1,43 @@
+<!-- IF S_AJAX_REQUEST -->
+<form action="{S_CONFIRM_ACTION}" method="post">
+<p>{MESSAGE_TEXT}</p>
+<!-- IF not S_SHADOW_TOPICS -->
+<!-- IF not S_SOFTDELETED and S_ALLOWED_DELETE and S_ALLOWED_SOFTDELETE -->
+<div class="post bg3">
+<input id="delete_permanent" name="delete_permanent" type="checkbox" value="1" {S_CHECKED_PERMANENT} /> {L_DELETE_PERMANENTLY}<br />
+<!-- IF S_TOPIC_MODE --><i>{L_DELETE_TOPIC_PERMANENTLY}</i><!-- ELSE --><i>{L_DELETE_POST_PERMANENTLY}</i><!-- ENDIF --></div>
+<!-- ENDIF -->
+<div class="post bg3">{L_DELETE_REASON}{L_COLON}<br />
+<input type="text" name="delete_reason" value="" class="inputbox" maxlength="120" /><br />
+<i>{L_DELETE_REASON_EXPLAIN}</i></div>
+<!-- ENDIF -->
+<div class="submit-buttons">
+	<input type="button" name="confirm" value="{L_YES}" class="button1" />&nbsp;
+	<input type="button" name="cancel" value="{L_NO}" class="button2" />
+</div>
+</form>
+<!-- ELSE -->
+<!-- INCLUDE overall_header.html -->
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
+<div class="panel">
+<h2>{MESSAGE_TITLE}</h2>
+<p>{MESSAGE_TEXT}</p>
+<!-- IF not S_SHADOW_TOPICS -->
+<!-- IF not S_SOFTDELETED and S_ALLOWED_DELETE and S_ALLOWED_SOFTDELETE -->
+<div class="post bg3">
+<input id="delete_permanent" name="delete_permanent" type="checkbox" value="1" {S_CHECKED_PERMANENT} /> {L_DELETE_PERMANENTLY}<br />
+<!-- IF S_TOPIC_MODE --><i>{L_DELETE_TOPIC_PERMANENTLY}</i><!-- ELSE --><i>{L_DELETE_POST_PERMANENTLY}</i><!-- ENDIF --></div>
+<!-- ENDIF -->
+<div class="post bg3">{L_DELETE_REASON}<br />
+<input type="text" name="delete_reason" value="" class="inputbox" maxlength="120" /><br />
+<i>{L_DELETE_REASON_EXPLAIN}</i></div>
+<!-- ENDIF -->
+<div class="submit-buttons">
+	{S_HIDDEN_FIELDS}
+	<input type="submit" name="confirm" value="{L_YES}" class="button1" />&nbsp; 
+	<input type="submit" name="cancel" value="{L_NO}" class="button2" />
+</div>
+</div>
+</form>
+<!-- INCLUDE overall_footer.html -->
+<!-- ENDIF -->

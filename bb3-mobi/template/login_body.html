@@ -1,0 +1,34 @@
+<!-- INCLUDE overall_header.html -->
+<form action="{S_LOGIN_ACTION}" method="post">
+<div class="panel">
+<div class="inner">
+<!-- IF LOGIN_EXPLAIN --><p>{LOGIN_EXPLAIN}</p><!-- ELSE --><h2>{L_LOGIN}</h2><!-- ENDIF -->
+<!-- IF LOGIN_ERROR --><p class="error">{LOGIN_ERROR}</p><!-- ENDIF -->
+<div class="post bg2">{L_USERNAME}{L_COLON}<br />
+<input type="text" name="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="inputbox autowidth" /></div>
+<div class="post bg2">{L_PASSWORD}{L_COLON}<br />
+<input type="password" name="{PASSWORD_CREDENTIAL}" size="25" class="inputbox autowidth" autocomplete="off" />
+<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+	<!-- IF U_SEND_PASSWORD --><p><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a></p><!-- ENDIF -->
+	<!-- IF U_RESEND_ACTIVATION --><p><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></p><!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+	<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_FULL_LOGIN -->
+<div class="post bg2">
+<!-- IF S_AUTOLOGIN_ENABLED --><input type="checkbox" name="autologin" /> {L_LOG_ME_IN}<br /><!-- ENDIF -->
+<input type="checkbox" name="viewonline" /> {L_HIDE_ME}</div>
+<!-- ENDIF -->
+{S_LOGIN_REDIRECT}
+<div class="post bg3">{S_HIDDEN_FIELDS}<input type="submit" name="login" value="{L_LOGIN}" class="button1" /></div>
+<!-- IF not S_ADMIN_AUTH and PROVIDER_TEMPLATE_FILE -->
+<!-- INCLUDE {PROVIDER_TEMPLATE_FILE} -->
+<!-- ENDIF -->
+<!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED --><a href="{U_REGISTER}" class="button rightside">{L_REGISTER}</a><!-- ENDIF -->
+</div>
+</div>
+</form>
+<!-- INCLUDE overall_footer.html -->

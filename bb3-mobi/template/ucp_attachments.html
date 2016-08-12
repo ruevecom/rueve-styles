@@ -1,0 +1,39 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<div class="post bg2">{L_ATTACHMENTS_EXPLAIN}</div>
+<!-- IF .attachrow -->
+<div class="header">{NUM_ATTACHMENTS}</div>
+<!-- BEGIN attachrow -->
+<div class="post<!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+<input type="checkbox" name="attachment[{attachrow.ATTACH_ID}]" value="1" />
+<a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle attachment-filename ellipsis-text" title="{attachrow.FILENAME}">{attachrow.FILENAME}</a> ({attachrow.SIZE})<br />
+{L_DOWNLOADS}{L_COLON} {attachrow.DOWNLOAD_COUNT}<br />
+{L_POST_TIME}{L_COLON} {attachrow.POST_TIME}<br />
+<!-- IF attachrow.S_IN_MESSAGE -->{L_PM}{L_COLON} <!-- ELSE -->{L_TOPIC}{L_COLON} <!-- ENDIF --><a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a></div>
+<!-- END attachrow -->
+<div class="post bg3 dropdown-container">
+<a href="#" class="dropdown-trigger">{L_SORT_BY}</a>
+<div class="dropdown hidden"><select name="sk" id="sk">{S_SORT_OPTIONS}</select>
+<select name="sd" id="sd">{S_ORDER_SELECT}</select>
+<input class="button2" type="submit" name="sort" value="{L_SORT}" />
+{S_FORM_TOKEN}</div>
+</div>
+<div class="action-bar">
+	<!-- IF .pagination -->
+	<div class="rightside pagination">
+	<!-- INCLUDE pagination.html -->
+	</div>
+	<!-- ENDIF -->
+	<!-- IF S_ATTACHMENT_ROWS -->
+	<input class="button2" type="submit" name="delete" value="{L_DELETE_MARKED}" /><!-- ENDIF -->
+</div>
+<!-- ELSE -->
+<div class="panel"><b>{L_UCP_NO_ATTACHMENTS}</b></div>
+<!-- ENDIF -->
+<!-- IF S_ATTACHMENT_ROWS -->
+<p><a href="#" onclick="marklist('ucp', 'attachment', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 'attachment', false); return false;">{L_UNMARK_ALL}</a>
+{S_FORM_TOKEN}
+</p>
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE ucp_footer.html -->

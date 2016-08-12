@@ -1,0 +1,27 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<div class="bg3">
+<div class="header">{L_TITLE}</div>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<!-- EVENT ucp_prefs_post_prepend -->
+<div class="post bg1">{L_DEFAULT_BBCODE}{L_COLON}<br />
+<input type="radio" name="bbcode" id="bbcode1" value="1"<!-- IF S_BBCODE --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="bbcode" id="bbcode0" value="0"<!-- IF not S_BBCODE --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<div class="post bg1">{L_DEFAULT_SMILIES}{L_COLON}<br />
+<input type="radio" name="smilies" id="smilies1" value="1"<!-- IF S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="smilies" id="smilies0" value="0"<!-- IF not S_SMILIES --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<div class="post bg1">{L_DEFAULT_ADD_SIG}{L_COLON}<br />
+<input type="radio" name="sig" id="sig1" value="1"<!-- IF S_SIG --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="sig" id="sig0" value="0"<!-- IF not S_SIG --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<div class="post bg1">{L_DEFAULT_NOTIFY}{L_COLON}<br />
+<input type="radio" name="notify" id="notify1" value="1"<!-- IF S_NOTIFY --> checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="notify" id="notify0" value="0"<!-- IF not S_NOTIFY --> checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<!-- EVENT ucp_prefs_post_append -->
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE ucp_footer.html -->

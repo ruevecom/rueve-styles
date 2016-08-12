@@ -1,0 +1,13 @@
+<!-- BEGIN pagination -->
+	<!-- IF pagination.S_IS_PREV -->
+	<a href="{pagination.PAGE_URL}" rel="prev" class="button">{L_PREVIOUS}</a>
+	<!-- ELSEIF pagination.S_IS_CURRENT -->
+	<span class="active button">{pagination.PAGE_NUMBER}</span>
+	<!-- ELSEIF pagination.S_IS_ELLIPSIS -->
+	<span class="ellipsis button">{L_ELLIPSIS}</span>
+	<!-- ELSEIF pagination.S_IS_NEXT -->
+	<a href="{pagination.PAGE_URL}" rel="next" class="button">{L_NEXT}</a>
+	<!-- ELSE -->
+	<a href="{pagination.PAGE_URL}" class="button">{pagination.PAGE_NUMBER}</a>
+	<!-- ENDIF -->
+<!-- END pagination -->

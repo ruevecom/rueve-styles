@@ -1,0 +1,41 @@
+<h3 id="review">{TOPIC_TITLE}</h3>
+<div id="topicreview">
+<script type="text/javascript">
+// <![CDATA[
+	bbcodeEnabled = {S_BBCODE_ALLOWED};
+// ]]>
+</script>
+	<!-- BEGIN topic_review_row -->
+	<!-- IF topic_review_row.S_IGNORE_POST -->
+	<div class="post bg3" id="pr{topic_review_row.POST_ID}">{topic_review_row.L_IGNORE_POST}
+	<!-- ELSE -->
+	<div class="post <!-- IF topic_review_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF topic_review_row.POST_ID == REPORTED_POST_ID --> bg3<!-- ENDIF -->" id="pr{topic_review_row.POST_ID}">
+	<!-- ENDIF -->
+		<i><a href="#pr{topic_review_row.POST_ID}">{topic_review_row.POST_SUBJECT}</a></i>
+		<p class="author"><b>{topic_review_row.POST_AUTHOR_FULL}</b> &raquo; {topic_review_row.POST_DATE}
+			<!-- IF topic_review_row.U_MCP_DETAILS -->
+			<a href="{topic_review_row.U_MCP_DETAILS}" class="rightside button"><span>{L_POST_DETAILS}</span></a><!-- ENDIF -->
+			<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
+			<a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}" class="rightside button"><span>{L_QUOTE}</span></a>
+			<!-- ENDIF -->
+		</p>
+		<div class="content">{topic_review_row.MESSAGE}</div>
+		<!-- IF topic_review_row.S_HAS_ATTACHMENTS -->
+		<div class="attachbox">{L_ATTACHMENTS}
+			<!-- BEGIN attachment -->
+			{topic_review_row.attachment.DISPLAY_ATTACHMENT}
+			<!-- END attachment -->
+		</div>
+		<!-- ENDIF -->
+		<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
+			<div id="message_{topic_review_row.POST_ID}" style="display: none;">{topic_review_row.DECODED_MESSAGE}</div>
+		<!-- ENDIF -->
+	</div>
+	<!-- END topic_review_row -->
+</div>
+<hr />
+<!-- IF S_MCP_REPORT -->
+	<p><a href="#report" class="top2">{L_BACK_TO_TOP}</a></p>
+<!-- ELSE -->
+	<p><a href="#postingbox" class="top2">{L_BACK_TO_TOP}</a></p>
+<!-- ENDIF -->

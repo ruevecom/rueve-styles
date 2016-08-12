@@ -1,0 +1,16 @@
+<!-- IF S_SIMPLE_MESSAGE -->
+<!-- INCLUDE simple_header.html -->
+<!-- ELSE -->
+<!-- INCLUDE overall_header.html -->
+<!-- ENDIF -->
+<div class="panel" id="message">
+<h2>{MESSAGE_TITLE}</h2>
+<p>{MESSAGE_TEXT}</p>
+<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV -->
+<p> &laquo; <a href="{U_SEARCH}">{L_GO_TO_SEARCH_ADV}</a></p><!-- ENDIF -->
+</div>
+<!-- IF S_SIMPLE_MESSAGE -->
+<!-- INCLUDE simple_footer.html -->
+<!-- ELSE -->
+<!-- INCLUDE overall_footer.html -->
+<!-- ENDIF -->

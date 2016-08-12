@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex" />
+{META}
+<title>{SITENAME} &bull; {PAGE_TITLE}</title>
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
+<!-- EVENT viewtopic_print_head_append -->
+</head>
+<body id="phpbb">
+<div id="wrap">
+<a id="top" class="anchor"></a>
+<div id="page-header">
+	<h2>{TOPIC_TITLE}</h2>
+	<p><a href="{U_TOPIC}">{U_TOPIC}</a></p>
+</div>
+<div id="page-body">
+<div class="rightside">{PAGE_NUMBER}</div>
+<hr />
+<!-- BEGIN postrow -->
+	<div class="post">
+		<div class="author"><b>{postrow.POST_AUTHOR}</b> &raquo; {postrow.POST_DATE}</div>
+		<div class="content">{postrow.MESSAGE}</div>
+	</div>
+	<hr />
+<!-- END postrow -->
+</div>
+<div id="page-footer">
+	<div class="copyright">
+		<a href="http://bb3.mobi" title="phpBB Mobile Forum">Mobile Forum</a> &copy; BB3.Mobi (Anvar)<br />
+		Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/
+	</div>
+</div>
+</div>
+</body>
+</html>

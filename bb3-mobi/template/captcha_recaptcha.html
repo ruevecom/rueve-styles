@@ -1,0 +1,31 @@
+<!-- IF S_TYPE == 1 -->
+<div class="panel">
+<h3>{L_CONFIRMATION}</h3>
+<p><i>{L_CONFIRM_EXPLAIN}</i></p>
+<!-- ENDIF -->
+<!-- IF S_RECAPTCHA_AVAILABLE -->
+<p>{L_CONFIRM_CODE}{L_COLON}<br /><i>{L_RECAPTCHA_EXPLAIN}</i></p>
+<div class="captcha">
+	<script>
+	var RecaptchaOptions = {
+		lang : '{LA_RECAPTCHA_LANG}',
+		theme : 'clean',
+		tabindex : <!-- IF $CAPTCHA_TAB_INDEX -->{$CAPTCHA_TAB_INDEX}<!-- ELSE -->10<!-- ENDIF -->
+	};
+	</script>
+	<script src="{RECAPTCHA_SERVER}/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
+	<noscript>
+	<div>
+		<object data="{RECAPTCHA_SERVER}/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="130" width="240"></object><br />
+		<textarea name="recaptcha_challenge_field" rows="3" cols="25"></textarea>
+		<input type="hidden" name="recaptcha_response_field" value="manual_challenge" />
+	</div>
+	</noscript>
+	<a href="http://www.google.com/intl/{LA_RECAPTCHA_LANG}/policies/" target="_blank" class="recaptcha-responsive" style="display: none"><img alt="" width="71" height="36" src="{RECAPTCHA_SERVER}/img/clean/logo.png"></a>
+</div>
+<!-- ELSE -->
+{L_RECAPTCHA_NOT_AVAILABLE}
+<!-- ENDIF -->
+<!-- IF S_TYPE == 1 -->
+</div>
+<!-- ENDIF -->

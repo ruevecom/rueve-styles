@@ -1,0 +1,17 @@
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">
+<div class="action-bar">
+<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
+<!-- IF U_POST_REPLY_PM --><a title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}" class="button">{L_BUTTON_PM_REPLY}</a><!-- ELSEIF U_POST_NEW_TOPIC --><a href="{U_POST_NEW_TOPIC}" title="{L_UCP_PM_COMPOSE}" class="button">{L_BUTTON_PM_NEW}</a><!-- ENDIF -->
+<!-- IF U_FORWARD_PM --><a title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}" class="button">{L_BUTTON_PM_FORWARD}</a><!-- ENDIF -->
+<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><a title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}" class="button">{L_BUTTON_PM_REPLY_ALL}</a><!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF S_VIEW_MESSAGE -->
+<div class="inner">
+ &laquo; <a href="{U_CURRENT_FOLDER}">{L_RETURN_TO_FOLDER}</a>
+<!-- IF U_PRINT_PM -->
+<a href="{U_PRINT_PM}" title="{L_PRINT_PM}" class="rightside small-icon"><img src="{T_THEME_PATH}/images/icon_print.gif" alt="" /></a><!-- ENDIF -->
+</div>
+<!-- ELSEIF FOLDER_CUR_MESSAGES neq 0 -->
+<!-- IF U_MARK_ALL --><a href="{U_MARK_ALL}" class="rightside"><i>{L_PM_MARK_ALL_READ}</i></a><!-- ENDIF -->
+<!-- ENDIF -->
+</div>

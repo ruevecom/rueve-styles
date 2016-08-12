@@ -1,0 +1,43 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2"><i>{L_DRAFTS_EXPLAIN}</i></div>
+<form id="postform" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<!-- IF S_EDIT_DRAFT -->
+<!-- INCLUDE posting_editor.html -->
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+<input type="submit" name="submit" value="{L_SAVE}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+<!-- ELSE -->
+<!-- IF .draftrow -->
+<table class="table1" width="100%">
+<tr>
+	<th class="header">{L_DRAFT_TITLE}</th>
+	<th class="header">{L_MARK}</th>
+</tr>
+<!-- BEGIN draftrow -->
+<tr class="row<!-- IF draftrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<td class="list-inner">
+	<a class="topictitle" href="{draftrow.U_VIEW_EDIT}">{draftrow.DRAFT_SUBJECT}</a><br />
+	<!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+	<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+	<!-- ELSEIF S_PRIVMSGS -->
+	<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
+	<p>{L_SAVE_DATE}{L_COLON} <b>{draftrow.DATE}</b><br />
+	<!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> &bull; <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></p>
+	</td>
+	<td class="mark"><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" /></td>
+</tr>
+<!-- END draftrow -->
+</table>
+<div class="panel">
+	<input class="button2" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+	<div class="rightside"><a href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a></div>
+	{S_FORM_TOKEN}
+</div>
+<!-- ELSE -->
+<div class="post bg1">{L_NO_SAVED_DRAFTS}</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE ucp_footer.html -->

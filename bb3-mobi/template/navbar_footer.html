@@ -1,0 +1,32 @@
+<div class="navbar">
+<div class="inner">
+	<ul id="nav-footer" class="linklist navlinks">
+		<li class="small-icon">
+			<!-- IF U_SITE_HOME --><a href="{U_SITE_HOME}" title="{L_HOME}"><img src="{T_THEME_PATH}/images/icon_pages.gif" alt="" /></a><!-- ENDIF -->
+			<!-- EVENT overall_footer_breadcrumb_prepend -->
+			<a href="{U_INDEX}" title="{L_INDEX}"><img src="{T_THEME_PATH}/images/icon_home.gif" alt="" /></a>
+			<!-- EVENT overall_footer_breadcrumb_append -->
+		</li>
+		<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT -->
+			<li class="small-icon"><a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><img src="{T_THEME_PATH}/images/icon_<!-- IF not S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->.gif" alt="" /></a></li>
+		<!-- ENDIF -->
+		<!-- IF not S_IS_BOT -->
+		<!-- EVENT overall_footer_timezone_before -->
+		<li class="small-icon rightside">
+		<a href="{U_DELETE_COOKIES}" title="{L_DELETE_COOKIES}"><img src="{T_THEME_PATH}/images/icon_delete_cookies.gif" alt=""/></a></li>
+		<li class="small-icon rightside" title="{L_FAQ}"><a href="{U_FAQ}"><img src="{T_THEME_PATH}/images/icon_faq.gif" alt=""/></a></li>
+		<!-- EVENT overall_footer_timezone_after -->
+		<!-- ENDIF -->
+		<!-- IF S_DISPLAY_MEMBERLIST -->
+		<li class="small-icon rightside"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST}"><img src="{T_THEME_PATH}/images/icon_members.gif" alt=""/></a></li>
+		<!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_before -->
+		<!-- IF U_TEAM -->
+		<li class="small-icon rightside"><a href="{U_TEAM}" title="{L_THE_TEAM}"><img src="{T_THEME_PATH}/images/icon_team.gif" alt=""/></a></li>
+		<!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_after -->
+		<!-- IF U_CONTACT_US -->
+		<li class="small-icon rightside"><a href="{U_CONTACT_US}" title="{L_CONTACT_US}"><img src="{T_THEME_PATH}/images/icon_contact.png" alt="" /></a></li><!-- ENDIF -->
+	</ul>
+</div>
+</div>

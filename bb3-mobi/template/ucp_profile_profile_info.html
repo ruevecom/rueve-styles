@@ -1,0 +1,33 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<div class="bg3">
+<div class="header">{L_TITLE} <i>[ <a href="{U_USER_PROFILE}">{L_VIEW_PROFILE}</a> ]</i></div>
+<i>{L_PROFILE_INFO_NOTICE}</i>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<!-- EVENT ucp_profile_profile_info_before -->
+<!-- IF S_BIRTHDAYS_ENABLED -->
+<div class="post bg1">{L_BIRTHDAY}{L_COLON}<br /><i>{L_BIRTHDAY_EXPLAIN}</i><br />
+{L_DAY}{L_COLON} <select name="bday_day">{S_BIRTHDAY_DAY_OPTIONS}</select>
+{L_MONTH}{L_COLON} <select name="bday_month">{S_BIRTHDAY_MONTH_OPTIONS}</select>
+{L_YEAR}{L_COLON} <select name="bday_year">{S_BIRTHDAY_YEAR_OPTIONS}</select>
+</div>
+<!-- ENDIF -->
+<!-- IF S_JABBER_ENABLED -->
+<div class="post bg1">{L_UCP_JABBER}{L_COLON}<br />
+<input type="email" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></div>
+<!-- ENDIF -->
+<!-- BEGIN profile_fields -->
+<div class="post <!-- IF profile_fields.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">{profile_fields.LANG_NAME}{L_COLON}<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF -->
+<!-- IF profile_fields.LANG_EXPLAIN --><br /><i>{profile_fields.LANG_EXPLAIN}</i><!-- ENDIF --><br />
+<!-- IF profile_fields.ERROR --><p class="error">{profile_fields.ERROR}</p><!-- ENDIF -->
+{profile_fields.FIELD}</div>
+<!-- END profile_fields -->
+<!-- EVENT ucp_profile_profile_info_after -->
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE ucp_footer.html -->

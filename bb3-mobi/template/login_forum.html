@@ -1,0 +1,19 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF FORUM_NAME --><h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2><!-- ENDIF -->
+<form id="login_forum" method="post" action="{S_LOGIN_ACTION}">
+{S_FORM_TOKEN}
+<div class="panel">
+	<h2 class="login-title">{L_LOGIN}</h2>
+	<i>{L_LOGIN_FORUM}</i>
+	<div class="content">
+		<!-- IF LOGIN_ERROR -->
+		<p class="error">{LOGIN_ERROR}</p>
+		<!-- ENDIF -->
+		<p>{L_PASSWORD}{L_COLON}<br />
+		<input type="password" tabindex="1" id="password" name="password" size="25" class="inputbox autowidth" autocomplete="off" /></p>
+		{S_LOGIN_REDIRECT}
+		{S_HIDDEN_FIELDS}<input type="submit" name="login" id="login" class="button1" value="{L_LOGIN}" />
+	</div>
+</div>
+</form>
+<!-- INCLUDE overall_footer.html -->

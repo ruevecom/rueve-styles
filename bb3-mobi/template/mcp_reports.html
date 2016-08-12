@@ -1,0 +1,55 @@
+<!-- INCLUDE mcp_header.html -->
+<form id="mcp" method="post" action="{S_MCP_ACTION}">
+<h2>{L_TITLE}</h2>
+<!-- IF not S_PM -->
+<div class="panel bg3">
+	{L_FORUM}{L_COLON} <select name="f" id="fo">{S_FORUM_OPTIONS}</select>
+	<input type="submit" name="sort" value="{L_GO}" class="button2" />
+	{S_FORM_TOKEN}
+</div>
+<!-- ENDIF -->
+<p>{L_EXPLAIN}</p>
+<!-- IF .postrow -->
+<table class="table1" width="100%">
+<tr>
+	<th class="header">{L_VIEW_DETAILS} / {TOTAL_REPORTS}</th>
+	<th class="header">{L_MARK}</th>
+</tr>
+<!-- BEGIN postrow -->
+<tr class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<!-- IF S_PM -->
+	<td><!-- IF postrow.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF -->
+	<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a><br />
+	{postrow.PM_AUTHOR_FULL} / {postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
+	<div class="content">{L_MESSAGE_TO} {postrow.RECIPIENTS}</div>
+	</td>
+	<!-- ELSE -->
+	<td><!-- IF postrow.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF --><a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a><br />
+	{postrow.POST_AUTHOR_FULL} / {postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br /> 
+	<!-- IF postrow.U_VIEWFORUM --><a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF -->
+	</td>
+	<!-- ENDIF -->
+	<td class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
+</tr>
+<!-- END postrow -->
+</table>
+<div class="submit-buttons">{S_SELECT_SORT_DAYS} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+<!-- IF TOPIC_ID --><input type="checkbox" class="radio" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; {L_ONLY_TOPIC}<!-- ENDIF -->
+<input type="submit" name="sort" value="{L_GO}" class="button2" />
+</div>
+<div class="rightside"><a href="#" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
+<hr />
+<div class="action-bar">
+<!-- IF .pagination -->
+<div class="pagination">
+	<!-- INCLUDE pagination.html -->
+</div>
+<input class="button2" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
+<!-- IF not S_CLOSED -->&nbsp;<input class="button1" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+<!-- ELSE -->
+<div class="panel">{L_NO_REPORTS}</div>
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE mcp_footer.html -->

@@ -1,0 +1,22 @@
+<!-- INCLUDE overall_header.html -->
+<h2>{PAGE_TITLE}</h2>
+<form method="post" action="{S_MODE_ACTION}">
+<!-- BEGIN group -->
+<div class="header"><!-- IF group.U_GROUP --><a href="{group.U_GROUP}">{group.GROUP_NAME}</a><!-- ELSE -->{group.GROUP_NAME}<!-- ENDIF --></div>
+<!-- BEGIN user -->
+<div class="row <!-- IF group.user.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<div class="inner">
+<b>{group.user.USERNAME_FULL}</b> <i>[ <!-- IF group.user.U_GROUP --><a<!-- IF group.user.GROUP_COLOR --> style="color: #{group.user.GROUP_COLOR}"<!-- ENDIF --> href="{group.user.U_GROUP}">{group.user.GROUP_NAME}</a><!-- ELSE -->{group.user.GROUP_NAME}<!-- ENDIF --> ]</i>
+<!-- IF group.user.RANK_IMG --><div class="rightside">{group.user.RANK_IMG}</div><!-- ELSEIF RANK_TITLE --><div class="rightside"><i>{group.user.RANK_TITLE}</i></div><!-- ENDIF -->
+<!-- IF S_DISPLAY_MODERATOR_FORUMS -->
+<p><!-- IF S_DISPLAY_MODERATOR_FORUMS -->{L_MODERATOR}{L_COLON} <!-- ENDIF --><!-- IF group.user.FORUM_OPTIONS --><select style="width: 100%;">{group.user.FORUMS}</select><!-- ELSEIF group.user.FORUMS -->{group.user.FORUMS}<!-- ELSE -->-<!-- ENDIF --></p>
+<!-- ENDIF -->
+</div>
+</div>
+<!-- BEGINELSE -->
+<div class="row bg1"><b>{L_NO_MEMBERS}</b></div>
+<!-- END user -->
+<!-- END group -->
+</form>
+<!-- INCLUDE jumpbox.html -->
+<!-- INCLUDE overall_footer.html -->

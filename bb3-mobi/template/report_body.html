@@ -1,0 +1,25 @@
+<!-- INCLUDE overall_header.html -->
+<h2><!-- IF S_REPORT_POST -->{L_REPORT_POST}<!-- ELSE -->{L_REPORT_MESSAGE}<!-- ENDIF --></h2>
+<form method="post" action="{S_REPORT_ACTION}" id="report">
+<i><!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF --></i>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<div class="header">{L_REASON}{L_COLON}
+<select name="reason_id" class="full"><!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.TITLE}</option><!-- END reason --></select></div>
+<div class="post bg3"><i><!-- BEGIN reason --><b>{reason.TITLE}</b> &raquo; {reason.DESCRIPTION}<br /><!-- END reason --></i></div>
+<!-- IF S_CAN_NOTIFY -->
+<div class="post bg1">{L_REPORT_NOTIFY}{L_COLON}<br /><i>{L_REPORT_NOTIFY_EXPLAIN}</i><br />
+<input type="radio" name="notify" id="notify1" value="1" <!-- IF not S_NOTIFY -->checked="checked"<!-- ENDIF --> /> {L_YES} 
+<input type="radio" name="notify" id="notify0" value="0" <!-- IF S_NOTIFY -->checked="checked"<!-- ENDIF --> /> {L_NO}</div>
+<!-- ENDIF -->
+<div class="post bg1">{L_MORE_INFO}{L_COLON}<br /><i>{L_CAN_LEAVE_BLANK}</i><br />
+<textarea name="report_text" id="report_text" rows="4" cols="25" class="inputbox">{REPORT_TEXT}</textarea></div>
+<!-- IF CAPTCHA_TEMPLATE -->
+	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<div class="panel submit-buttons">
+<input type="submit" name="submit" class="button1" value="{L_SUBMIT}" />&nbsp;
+<input type="submit" name="cancel" class="button2" value="{L_CANCEL}" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE overall_footer.html -->

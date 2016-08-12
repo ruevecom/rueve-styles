@@ -1,0 +1,19 @@
+<!-- IF .avatar_local_cats -->
+<div class="panel bg3">{L_AVATAR_CATEGORY}{L_COLON} <select name="avatar_local_cat" id="category">
+<!-- BEGIN avatar_local_cats -->
+<option value="{avatar_local_cats.NAME}"<!-- IF avatar_local_cats.SELECTED --> selected="selected"<!-- ENDIF -->>{avatar_local_cats.NAME}</option>
+<!-- END avatar_local_cats -->
+</select>
+<input type="submit" value="{L_GO}" name="avatar_local_go" class="button2" />
+</div>
+<div id="gallery">
+<!-- BEGIN avatar_local_row -->
+<!-- BEGIN avatar_local_col -->
+	<span style="inline-block"><img src="{avatar_local_row.avatar_local_col.AVATAR_IMAGE}" alt="" /><br />
+	<input type="radio" name="avatar_local_file" value="{avatar_local_row.avatar_local_col.AVATAR_FILE}" /></span>
+<!-- END avatar_local_col -->
+<!-- END avatar_local_row -->
+</div>
+<!-- ELSE -->
+<p><b>{L_NO_AVATARS}</b></p>
+<!-- ENDIF -->

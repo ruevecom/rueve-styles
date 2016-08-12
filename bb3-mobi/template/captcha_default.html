@@ -1,0 +1,14 @@
+<!-- IF S_TYPE == 1 -->
+<div class="panel">
+<h3>{L_CONFIRMATION}</h3>
+<i>{L_CONFIRM_EXPLAIN}</i>
+<!-- ENDIF -->
+<p>{L_CONFIRM_CODE}{L_COLON}<br />
+<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" /></p>
+<p><input type="text" name="confirm_code" maxlength="8" class="inputbox autowidth" title="{L_CONFIRM_CODE}" />
+<!-- IF S_CONFIRM_REFRESH --><input type="submit" name="refresh_vc" class="button2" value="{L_VC_REFRESH}" /><!-- ENDIF -->
+<input type="hidden" name="confirm_id" value="{CONFIRM_ID}" /></p>
+{L_CONFIRM_CODE_EXPLAIN}
+<!-- IF S_TYPE == 1 -->
+</div>
+<!-- ENDIF -->

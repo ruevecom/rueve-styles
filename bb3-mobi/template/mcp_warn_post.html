@@ -1,0 +1,35 @@
+<!-- INCLUDE mcp_header.html -->
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+<h2>{L_MCP_WARN_POST}</h2>
+<div class="panel">
+<h3><!-- IF USER_COLOR --><span style="color: #{USER_COLOR}">{USERNAME}</span><!-- ELSE -->{USERNAME}<!-- ENDIF --></h3>
+<!-- IF AVATAR_IMG --><div class="bg3">{AVATAR_IMG}</div><!-- ENDIF -->
+<div class="content">
+<!-- IF RANK_TITLE -->{L_RANK}{L_COLON} {RANK_TITLE}<br /><!-- ENDIF -->
+<!-- IF RANK_IMG --><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}{L_COLON}<!-- ENDIF --> {RANK_IMG}<br /><!-- ENDIF -->
+{L_JOINED}{L_COLON} {JOINED}<br />
+{L_TOTAL_POSTS}{L_COLON} {POSTS}<br />
+{L_WARNINGS}{L_COLON}  {WARNINGS}
+</div>
+</div>
+<div class="panel">
+<h3>{L_POST_DETAILS}</h3>
+<div class="content">{POST}</div>
+</div>
+<!-- EVENT mcp_warn_post_add_warning_field_before -->
+<div class="panel">
+<h3>{L_ADD_WARNING}</h3>
+<p>{L_ADD_WARNING_EXPLAIN}</p>
+<textarea name="warning" id="warning" class="inputbox" cols="25" rows="3">{L_WARNING_POST_DEFAULT}</textarea>
+<!-- IF S_CAN_NOTIFY -->
+<br /><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}
+<!-- ENDIF -->
+</div>
+<!-- EVENT mcp_warn_post_add_warning_field_after -->
+<div class="panel submit-buttons">
+	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+	<input type="submit" name="action[add_warning]" value="{L_SUBMIT}" class="button1" />
+	{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE mcp_footer.html -->

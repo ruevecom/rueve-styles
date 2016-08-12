@@ -1,0 +1,91 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			bb3-mobi (BB3 Mobi Style)
+	Based on style:		prosilver (the default phpBB 3.1.x style)
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		Anvar Stybaev ( http://bb3.mobi/ )
+    --------------------------------------------------------------
+*/
+/* jQuery popups
+---------------------------------------- */
+.phpbb_alert {
+	background: #fff;
+	border: 1px solid #999;
+	display: none;
+	left: 0;
+	padding: 0 25px 20px 25px;
+	position: fixed;
+	right: 0;
+	top: 150px;
+	z-index: 50;
+	width: 500px;
+	margin: 0 auto;
+}
+
+@media only screen and (max-height: 500px), only screen and (max-device-width: 500px)
+{
+	.phpbb_alert {
+		top: 25px;
+		width: auto;
+		margin: 0 5px;
+	}
+}
+
+.phpbb_alert .alert_close {
+	display: block;
+	float: right;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	text-decoration: none !important;
+	background: url("./images/alert_close.png") 0 0 no-repeat;
+	margin-top: -7px;
+	margin-right: -31px;
+}
+
+.phpbb_alert .alert_close:hover {
+	background-position: 0 -16px;
+}
+
+.phpbb_alert p {
+	margin: 8px 0;
+	padding-bottom: 8px;
+}
+
+.phpbb_alert label {
+	display: block;
+	margin: 8px 0;
+	padding-bottom: 8px;
+}
+
+#darkenwrapper {
+	display: none;
+	position: relative;
+	z-index: 44;
+}
+
+#darken {
+	background-color: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	z-index: 45;
+}
+
+#loading_indicator {
+	background: #000 url("./images/loading.gif") center center no-repeat;
+	border-radius: 5px;
+	display: none;
+	opacity: 0.8;
+	margin-top: -50px;
+	margin-left: -50px;
+	height: 50px;
+	width: 50px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 51;
+}

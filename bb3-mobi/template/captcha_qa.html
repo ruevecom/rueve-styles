@@ -1,0 +1,10 @@
+<!-- IF S_TYPE == 1 -->
+<div class="panel">
+<h3>{L_CONFIRMATION}</h3>
+<!-- ENDIF -->
+<p>{QA_CONFIRM_QUESTION}{L_COLON}<br /><i>{L_CONFIRM_QUESTION_EXPLAIN}</i></p>
+<p><input type="text" name="qa_answer" size="45"  class="inputbox autowidth" title="{L_ANSWER}" />
+<input type="hidden" name="qa_confirm_id" value="{QA_CONFIRM_ID}" /></p>
+<!-- IF S_TYPE == 1 -->
+</div>
+<!-- ENDIF -->

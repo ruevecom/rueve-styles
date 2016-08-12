@@ -1,0 +1,49 @@
+<!-- INCLUDE mcp_header.html -->
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+<div class="post bg2">{L_SEARCH_KEYWORDS}{L_COLON} <input type="search" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" /></div>
+<table class="table1" width="100%">
+<thead>
+<tr>
+	<th class="header">{L_ACTION} [{TOTAL}]</th>
+	<!-- IF S_CLEAR_ALLOWED --><th class="header">{L_MARK}</th><!-- ENDIF -->
+</tr>
+</thead>
+	<tbody>
+<!-- IF S_LOGS -->
+	<!-- BEGIN log -->
+	<!-- IF log.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+	<td>{log.USERNAME} &raquo; {log.DATE} [{log.IP}]<br />{log.ACTION}<br />{log.DATA}</td>
+	<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%" align="center"><input type="checkbox" name="mark[]" value="{log.ID}" /></td><!-- ENDIF -->
+	</tr>
+	<!-- END log -->
+<!-- ELSE -->
+	<tr>
+		<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->2<!-- ELSE -->1<!-- ENDIF -->">{L_NO_ENTRIES}</td>
+	</tr>
+<!-- ENDIF -->
+</tbody>
+</table>
+
+<!-- IF .log -->
+<div class="post bg3">{S_SELECT_SORT_DAYS} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+<input type="submit" name="sort" value="{L_GO}" class="button2" />
+<!-- IF S_CLEAR_ALLOWED -->
+<hr />
+<p class="mark-read"><a href="#" onclick="marklist('mcp', 'mark', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'mark', false); return false;">{L_UNMARK_ALL}</a></p>
+<!-- ENDIF -->
+</div>
+<div class="action-bar">
+<!-- IF .pagination -->
+<div class="pagination rightside">
+<!-- INCLUDE pagination.html -->
+</div>
+<!-- ENDIF -->
+<!-- IF S_CLEAR_ALLOWED -->
+<p><input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+&nbsp;<input class="button1" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" /></p>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<div>{S_FORM_TOKEN}</div>
+</form>
+<!-- INCLUDE mcp_footer.html -->

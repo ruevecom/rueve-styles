@@ -1,0 +1,33 @@
+<!-- INCLUDE overall_header.html -->
+<p><i>{TOTAL_GUEST_USERS_ONLINE}{L_COMMA_SEPARATOR} {TOTAL_REGISTERED_USERS_ONLINE}</i></p>
+<!-- IF S_SWITCH_GUEST_DISPLAY --><a href="{U_SWITCH_GUEST_DISPLAY}" class="button">{L_SWITCH_GUEST_DISPLAY}</a><!-- ENDIF -->
+<!-- IF .user_row -->
+<div class="header">{L_WHO_IS_ONLINE}</div>
+<!-- BEGIN user_row -->
+<div class="post <!-- IF user_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<div class="inner">
+<b>{user_row.USERNAME_FULL}</b> &raquo; {user_row.LASTUPDATE}
+<!-- IF user_row.USER_IP --><div class="rightside"><i>[{L_IP}{L_COLON} <a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a> &#187; <a href="{user_row.U_WHOIS}" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a>]</i></div><!-- ENDIF -->
+</div>
+<!-- IF user_row.USER_BROWSER --><div class="content">{user_row.USER_BROWSER}</div><!-- ENDIF -->
+<a href="{user_row.U_FORUM_LOCATION}">{user_row.FORUM_LOCATION}</a>
+</div>
+<!-- END user_row -->
+<div class="post bg3 dropdown-container">
+	<a href="#" class="dropdown-trigger">{L_SORT_BY}</a>
+	<div class="dropdown hidden">
+		<a href="{U_SORT_USERNAME}">{L_USERNAME}</a> | <a href="{U_SORT_LOCATION}">{L_FORUM_LOCATION}</a> | <a href="{U_SORT_UPDATED}">{L_LAST_UPDATED}</a>
+	</div>
+</div>
+<!-- ELSE -->
+<div class="panel">{L_NO_ONLINE_USERS}</div>
+<!-- ENDIF -->
+<!-- IF .pagination -->
+<div class="action-bar">
+	<div class="rightside pagination">
+	<!-- INCLUDE pagination.html -->
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- IF LEGEND --><p><i>{L_LEGEND}{L_COLON} {LEGEND}</i></p><!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

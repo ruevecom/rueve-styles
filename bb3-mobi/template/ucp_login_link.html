@@ -1,0 +1,21 @@
+<!-- INCLUDE overall_header.html -->
+<h2>{SITENAME} - {L_LOGIN_LINK}</h2>
+<i>{L_LOGIN_LINK_EXPLAIN}</i>
+<!-- IF LOGIN_LINK_ERROR --><p class="error">{LOGIN_LINK_ERROR}</p><!-- ENDIF -->
+<div class="header">{L_REGISTER}</div>
+<form action="{REGISTER_ACTION}" method="post" id="register">
+<div class="post bg1">{S_HIDDEN_FIELDS}<input type="submit" name="register" value="{L_REGISTER}" class="button1" /></div>
+<div class="header">{L_LOGIN}</div>
+<form action="{LOGIN_ACTION}" method="post" id="login">
+<!-- IF LOGIN_ERROR --><div class="post bg1 error">{LOGIN_ERROR}</div><!-- ENDIF -->
+<div class="post bg1">{L_USERNAME}{L_COLON}<br />
+<input type="text" name="{USERNAME_CREDENTIAL}" size="25" value="{LOGIN_USERNAME}" class="inputbox autowidth" /></div>
+<div class="post bg1">{L_PASSWORD}{L_COLON}<br />
+<input type="password" name="{PASSWORD_CREDENTIAL}" size="25" class="inputbox autowidth" autocomplete="off" /></div>
+<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+	<!-- DEFINE $CAPTCHA_TAB_INDEX = 4 -->
+	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<div>{S_LOGIN_REDIRECT}</div>
+<div class="panel">{S_HIDDEN_FIELDS}<input type="submit" name="login" value="{L_LOGIN}" class="button1" /></div>
+<!-- INCLUDE overall_footer.html -->

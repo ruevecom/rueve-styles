@@ -1,0 +1,294 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:		bb3-mobi (BB3 Mobi Style)
+	Based on style:		prosilver (the default phpBB 3.1.x style)
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		Anvar Stybaev ( http://bb3.mobi/ )
+    --------------------------------------------------------------
+*/
+body {
+	background: #F5F7FA;
+	color: #536482;
+	font-family: Verdana, Lucida Grande, Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	overflow-x: hidden;
+	margin: 2px;
+	padding: 0;
+}
+p { margin: 2px; }
+img, fieldset { border-width: 0; margin: 2px; }
+i { font-style: italic; font-size: 90%; }
+img, input, textarea, select, option { max-width: 98%; }
+h1, h2, h3 { font-size: 14px; font-weight: bold; margin: 4px; }
+hr { border-top: 1px solid #CCCCCC; margin: 2px 0; display: block; clear: both; }
+#wrap {
+	background: #fff;
+	border: 1px solid #E6E9ED;
+	overflow-x: hidden;
+	padding: 3px;
+}
+.headerbar {
+	background: #12A3EB url("./images/bg_header.gif") repeat-x 0 0;
+	color: #fff;
+	margin-bottom: 2px;
+	padding: 2px;
+}
+.site_logo {
+	background: url("./images/site_logo.png") no-repeat 0 0;
+	display: block;
+	float: left;
+	margin-right: 2px;
+	height: 40px;
+	width: 115px;
+}
+.navbar {
+	background: #cadceb;
+	padding: 2px;
+	margin-bottom: 2px;
+}
+.forabg, .forumbg {
+	background: #EEF5F9 url("./images/gradient.gif") repeat-x;
+	margin: 2px 0;
+	clear: both;
+}
+.header {
+	background: #0076b1 url("./images/bg_list.gif") repeat-x 0 0;
+	color: #fff;
+	padding: 6px;
+}
+.panel {
+	background: #ECF1F3;
+	color: #28313F;
+	margin: 2px 0;
+	padding: 2px;
+}
+.forumtitle, .topictitle {
+	font-weight: bold;
+	padding: 2px;
+}
+.row {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #00608F;
+	list-style-type: none;
+	padding: 2px;
+}
+.post, .content {
+	color: #333;
+	margin-bottom: 2px;
+	overflow-x: auto;
+	padding: 2px;
+}
+.bg1 {
+	background: #ECF3F7;
+}
+table.zebra-list tr:nth-child(odd) td, ul.zebra-list li:nth-child(odd) {
+	background: #ECF3F7;
+}
+.bg2 {
+	background: #e1ebf2;
+}
+table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
+	background: #e1ebf2;
+}
+.bg3 {
+	background: #cadceb;
+}
+.error { color: #BC2A4D; }
+ul.linklist > li {
+	float: left;
+	font-size: 1.1em;
+	line-height: 2.0em;
+	list-style-type: none;
+	margin-right: 4px;
+	padding-top: 1px;
+	width: auto;
+}
+ul.linklist > li.rightside,
+div.rightside,
+span.rightside,
+p.rightside,
+a.rightside {
+	float: right;
+	margin-right: 0;
+	margin-left: 4px;
+	text-align: right;
+}
+ul.leftside {
+	float: left;
+	margin-left: 0;
+	margin-right: 5px;
+	text-align: left;
+}
+ul.rightside {
+	float: right;
+	margin-left: 5px;
+	margin-right: -5px;
+	text-align: right;
+}
+
+.inputbox { width: 98%; }
+.autowidth { width: auto!important; }
+.clear { display: block; clear: both; }
+.copyright, .submit-buttons, .mark { text-align: center; }
+.inline-attachment { display: inline-block; }
+.attachbox { background: #fff; border: 1px dashed #C9D2D8; }
+.attachbox p { border-bottom: 1px solid #C9D2D8; }
+.small-icon img, .attachbox img { vertical-align: middle; }
+.avatar img {
+	float: left;
+	margin: 2px;
+	width: auto;
+	max-height: 35px;
+	max-width: 40px;
+	vertical-align: middle;
+}
+.rtl, .mark-read { text-align: right; }
+.rtl .site_logo,
+.rtl .avatar img {
+	float: right;
+}
+.headerbar h1, .headerbar p,
+.forabg dd, .forumbg dd,
+.hidden { display: none; }
+.sign { border-left: 1px solid #cadceb; padding: 3px; display: inline-block; }
+.sign a { color: #fff; font-weight: bold; }
+/* Old templat fix */
+.navbar ul, .forabg ul, .forumbg ul { padding: 0; margin: 0; }
+.navbar li, .forabg li, .forumbg li { list-style-type: none; }
+.dropdown { margin-right: 2px!important; }
+/* Inner box-model clearing */
+.inner:after,
+ul.linklist:after,
+.action-bar:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+/* Pagination
+---------------------------------------- */
+.pagination { margin: 2px; }
+.pagination li { display: inline-block; }
+.pagination a {
+	color: #5C758C;
+	background: #ECEDEE;
+	border: 1px solid #B4BAC0;
+}
+.pagination .ellipsis {
+	background: #ECEDEE;
+	color:	#000000;
+}
+.pagination .active {
+	color: #fff;
+	background: #4692BF;
+	border-color: #4692BF;
+}
+/* BB Code styles
+----------------------------------------*/
+/* Quote block */
+blockquote {
+	background: #EBEADD url("./images/quote.gif") 6px 8px no-repeat;
+	border: 1px solid #DBDBCE;
+	font-size: 0.95em;
+	margin: 0.5em 1px 0 15px;
+	overflow: hidden;
+	padding: 5px;
+}
+.rtl blockquote {
+	background-image: url("./images/quote_rtl.gif");
+}
+blockquote blockquote {
+	/* Nested quotes */
+	background-color: #EFEED9;
+}
+blockquote cite {
+	margin-left: 20px;
+	display: block;
+}
+blockquote.uncited {
+	padding-top: 25px;
+}
+/* Code block */
+.codebox {
+	background-color: #fff;
+	border: 1px solid #C9D2D8;
+	padding: 3px;
+}
+.codebox p {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 3px;
+	font-size: 0.8em !important;
+	font-weight: bold;
+	display: block;
+}
+blockquote .codebox {
+	margin-left: 0;
+}
+.codebox code {
+	color: #2E8B57;
+	/* Also see tweaks.css */
+	overflow: auto;
+	display: block;
+	height: auto;
+	max-height: 200px;
+	white-space: normal;
+	padding-top: 5px;
+	font: 0.9em Monaco, "Andale Mono","Courier New", Courier, mono;
+	line-height: 1.3em;
+	margin: 2px 0;
+}
+.syntaxbg { color: #fff; }
+.syntaxcomment, .pm_marked_colour { color: #FF8000; }
+.syntaxdefault, .pm_friend_colour  { color: #0000BB; }
+.syntaxhtml, .pm_foe_colour { color: #000000; }
+.syntaxkeyword { color: #007700; }
+.syntaxstring { color: #DD0000; }
+.pm_replied_colour { color: #536482; }
+/* -----------------------------------------------------------
+Colours and backgrounds for links.css
+-------------------------------------------------------------- */
+a { color: #105289; text-decoration: none; }
+a:hover, .activetab a { color: #D31141; }
+th a, .header a, .header a { color: #fff; }
+th a:hover, .header a:hover, .header a:hover { color: #A8D8FF; }
+.row:hover { background-color: #F6F4D0; }
+.responsive-menu-link,
+.responsive-tab-link {
+	display: inline-block;
+	font-size: 16px;
+	position: relative;
+	width: 14px;
+	text-decoration: none;
+}
+.responsive-menu-link:before,
+.responsive-tab-link:before {
+	content: '';
+	position: absolute;
+	left: 2px;
+	top: 7px;
+	height: .125em;
+	width: 14px;
+	border-bottom: 0.125em solid #105289;
+	border-top: 0.375em double #105289;
+}
+.button {
+	background: #EFEFEF url("./images/bg_button.gif") 0 0 repeat-x;
+	color: #D31141;
+	border: 1px solid #C7C3BF;
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 0 3px;
+	margin: 1px;
+}
+.button:hover, .activetab,
+.responsive-menu-link:hover:before {
+	border-color: #0a8ed0;
+}
+.button span { font-style: italic; }
+.button1, .button2, .button3 {
+	background: #FAFAFA url("./images/bg_button.gif");
+	border: 1px solid #666666;
+}
+.button1:hover, .button2:hover, .button3:hover {
+	border-color: #BC2A4D;
+	color: #BC2A4D;
+}

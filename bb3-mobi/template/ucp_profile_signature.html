@@ -1,0 +1,33 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2">{L_SIGNATURE_EXPLAIN}</div>
+<form id="postform" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<!-- IF SIGNATURE_PREVIEW != '' -->
+<div class="panel">
+<h3>{L_SIGNATURE_PREVIEW}</h3>
+{SIGNATURE_PREVIEW}</div>
+<!-- ENDIF -->
+<div class="panel">
+<!-- DEFINE $SIG_EDIT = 1 -->
+<!-- INCLUDE posting_editor.html -->
+<div class="post bg3">
+<b>{L_OPTIONS}</b>
+<!-- IF S_BBCODE_ALLOWED -->
+<p><input type="checkbox" name="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</p>
+<!-- ENDIF -->
+<!-- IF S_SMILIES_ALLOWED -->
+<p><input type="checkbox" name="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</p>
+<!-- ENDIF -->
+<!-- IF S_LINKS_ALLOWED -->
+<p><input type="checkbox" name="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</p>
+<!-- ENDIF -->
+</div>
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}
+<input type="reset" name="reset" value="{L_RESET}" class="button2" />&nbsp;
+<input type="submit" name="preview" value="{L_PREVIEW}" class="button2" />&nbsp;
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE ucp_footer.html -->

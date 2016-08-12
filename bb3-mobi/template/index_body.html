@@ -1,0 +1,41 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_DISPLAY_SEARCH -->
+<p><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a> | <a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a> | <a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></p>
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_BIRTHDAY_LIST -->
+<!-- EVENT index_body_block_birthday_prepend -->
+<!-- IF .birthdays -->
+{L_CONGRATULATIONS}{L_COLON} <!-- BEGIN birthdays --><b>{birthdays.USERNAME}</b><!-- IF birthdays.AGE !== '' --> ({birthdays.AGE})<!-- ENDIF --><!-- IF not birthdays.S_LAST_ROW -->, <!-- ENDIF --><!-- END birthdays --><!-- ENDIF -->
+<!-- EVENT index_body_block_birthday_append -->
+<!-- ENDIF -->
+<!-- EVENT index_body_markforums_before -->
+<!-- IF not S_IS_BOT -->
+<!-- IF U_MARK_FORUMS --><p class="mark-read"><i><a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a></i></p><!-- ENDIF -->
+<!-- ENDIF -->
+<!-- EVENT index_body_markforums_after -->
+<!-- INCLUDE forumlist_body.html -->
+<!-- EVENT index_body_forumlist_body_after -->
+<div class="panel small-icon">
+<!-- IF S_USER_LOGGED_IN and not S_IS_BOT -->
+<!-- IF U_RESTORE_PERMISSIONS -->
+<a href="{U_RESTORE_PERMISSIONS}"><img src="{T_THEME_PATH}/images/icon_acp.gif" alt=""/> {L_RESTORE_PERMISSIONS}</a><br /><!-- ENDIF -->
+<a href="{U_PROFILE}"><img src="{T_THEME_PATH}/images/icon_ucp.gif" alt=""/> {L_PROFILE}</a><br />
+<a href="{U_USER_PROFILE}"><img src="{T_THEME_PATH}/images/icon_profile.gif" alt=""/> {L_READ_PROFILE}</a><br />
+<!-- ENDIF -->
+<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED -->
+<a href="{U_REGISTER}"><img src="{T_THEME_PATH}/images/icon_register.gif" alt=""/> {L_REGISTER}</a><br /><!-- ENDIF -->
+<a href="{U_LOGIN_LOGOUT}"><img src="{T_THEME_PATH}/images/icon_logout.gif" alt=""/> {L_LOGIN_LOGOUT}</a>
+</div>
+<!-- EVENT index_body_stat_blocks_before -->
+<!-- IF U_VIEWONLINE --><p><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></p><!-- ENDIF -->
+<!-- IF NEWEST_USER -->
+<div class="panel bg3">
+<div class="post bg1">
+<!-- EVENT index_body_block_stats_prepend -->
+{TOTAL_POSTS}<br />{TOTAL_TOPICS}<br />{TOTAL_USERS}<br />{NEWEST_USER}
+<!-- EVENT index_body_block_stats_append -->
+</div>
+</div>
+<!-- ENDIF -->
+<!-- EVENT index_body_stat_blocks_after -->
+<!-- INCLUDE overall_footer.html -->

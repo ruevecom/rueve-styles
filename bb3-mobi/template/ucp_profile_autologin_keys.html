@@ -1,0 +1,34 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2"><i>{L_PROFILE_AUTOLOGIN_KEYS}</i></div>
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<table class="table1" width="100%">
+<thead>
+	<tr>
+		<th class="header">{L_LOGIN_KEY}</th>
+		<th class="header">{L_MARK}</th>
+	</tr>
+</thead>
+<tbody>
+<!-- BEGIN sessions -->
+<tr class="row <!-- IF sessions.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+	<td><b>{sessions.KEY}</b> | {L_IP}{L_COLON} {sessions.IP} | {L_LOGIN_TIME}{L_COLON} {sessions.LOGIN_TIME}</td>
+	<td class="mark"><input type="checkbox" name="keys[]" value="{sessions.KEY}" /></td>
+</tr>
+<!-- BEGINELSE -->
+<tr><td class="bg1 mark">{L_PROFILE_NO_AUTOLOGIN_KEYS}</td></tr>
+<!-- END sessions -->
+</tbody>
+</table>
+<!-- IF .sessions -->
+<div class="action-bar">
+<div class="rightside">
+<a href="#" onclick="$('#ucp input:checkbox').prop('checked', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="$('#ucp input:checkbox').prop('checked', false); return false;">{L_UNMARK_ALL}</a></div>
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_DELETE_MARKED}" class="button2" />
+{S_FORM_TOKEN}
+</div>
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE ucp_footer.html -->

@@ -1,0 +1,49 @@
+<h3>{L_FIND_USERNAME}</h3>
+<form method="post" action="{S_MODE_ACTION}" id="search_memberlist">
+<div class="panel bg3"><i>{L_FIND_USERNAME_EXPLAIN}</i>
+<!-- EVENT memberlist_search_fields_before -->
+<div class="post bg1">{L_USERNAME}{L_COLON}<br />
+<!-- IF U_LIVE_SEARCH --><div class="dropdown-container dropdown-{S_CONTENT_FLOW_END}"><!-- ENDIF -->
+<input type="text" name="username" id="username" value="{USERNAME}" class="inputbox"<!-- IF U_LIVE_SEARCH --> autocomplete="off" data-filter="phpbb.search.filter" data-ajax="member_search" data-min-length="3" data-url="{U_LIVE_SEARCH}" data-results="#user-search" data-overlay="false"<!-- ENDIF --> />
+<!-- IF U_LIVE_SEARCH -->
+	<div class="dropdown live-search hidden" id="user-search">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<ul class="dropdown-contents search-results">
+			<li class="search-result-tpl"><span class="search-result"></span></li>
+		</ul>
+	</div>
+</div>
+<!-- ENDIF -->
+</div>
+<!-- IF S_EMAIL_SEARCH_ALLOWED -->
+<div class="post bg1">{L_EMAIL}{L_COLON}<br />
+<input type="text" name="email" value="{EMAIL}" class="inputbox" /></div>
+<!-- ENDIF -->
+<!-- IF S_JABBER_ENABLED -->
+<div class="post bg1">{L_JABBER}{L_COLON}<br />
+<input type="text" name="jabber" value="{JABBER}" class="inputbox" /></div>
+<!-- ENDIF -->
+<div class="post bg1">{L_GROUP}{L_COLON}<br />
+<select name="search_group_id">{S_GROUP_SELECT}</select></div>
+<!-- EVENT memberlist_search_sorting_options_before -->
+<div class="post bg1">{L_SORT_BY}{L_COLON}<br />
+<select name="sk" id="sk">{S_SORT_OPTIONS}</select> <select name="sd">{S_ORDER_SELECT}</select></div>
+<div class="post bg2">{L_JOINED}{L_COLON}<br />
+<select name="joined_select">{S_JOINED_TIME_OPTIONS}</select> <input class="inputbox autowidth" type="text" name="joined" value="{JOINED}" /></div>
+<!-- IF S_VIEWONLINE -->
+<div class="post bg2">{L_LAST_ACTIVE}{L_COLON}<br />
+<select name="active_select">{S_ACTIVE_TIME_OPTIONS}</select> <input class="inputbox autowidth" type="text" name="active" value="{ACTIVE}" /></div>
+<!-- ENDIF -->
+<div class="post bg2">{L_POSTS}{L_COLON}<br />
+<select name="count_select">{S_COUNT_OPTIONS}</select> <input class="inputbox autowidth" type="number" min="0" name="count" value="{COUNT}" /></div>
+<!-- IF S_IP_SEARCH_ALLOWED -->
+<div class="post bg2">{L_POST_IP}{L_COLON} <input class="inputbox autowidth" type="text" name="ip" value="{IP}" /></div>
+<!-- ENDIF -->
+<!-- EVENT memberlist_search_fields_after -->
+</div>
+<div class="panel submit-buttons">
+	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+	<input type="submit" name="submit" value="{L_SEARCH}" class="button1" />
+	{S_FORM_TOKEN}
+</div>
+</form>

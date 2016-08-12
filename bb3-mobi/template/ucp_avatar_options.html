@@ -1,0 +1,31 @@
+<div class="panel">
+<!-- IF not S_AVATARS_ENABLED -->
+<p>{L_AVATAR_FEATURES_DISABLED}</p>
+<!-- ENDIF -->
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<p>{L_CURRENT_IMAGE}{L_COLON}<br /><i>{L_AVATAR_EXPLAIN}</i></p>
+<p><!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF --></p>
+<p><input type="checkbox" name="avatar_delete" /> {L_DELETE_AVATAR}</p>
+<h3>{L_AVATAR_SELECT}</h3>
+<p>{L_AVATAR_TYPE}{L_COLON}</p>
+<select name="avatar_driver" id="avatar_driver" data-togglable-settings="true">
+<!-- BEGIN avatar_drivers -->
+<option value="{avatar_drivers.DRIVER}"<!-- IF avatar_drivers.SELECTED --> selected="selected"<!-- ENDIF --> data-toggle-setting="#avatar_option_{avatar_drivers.DRIVER}">{avatar_drivers.L_TITLE}</option>
+<!-- END avatar_drivers -->
+</select>
+<hr />
+<div id="avatar_options">
+<!-- BEGIN avatar_drivers -->
+<div id="avatar_option_{avatar_drivers.DRIVER}">
+<noscript><h3>{avatar_drivers.L_TITLE}</h3></noscript>
+<p>{avatar_drivers.L_EXPLAIN}</p>{avatar_drivers.OUTPUT}
+</div>
+<!-- END avatar_drivers -->
+</div>
+</div>
+<!-- IF not S_GROUP_MANAGE -->
+<div class="panel submit-buttons">
+	<input type="reset" value="{L_RESET}" name="reset" class="button2" /> &nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+</div>
+<!-- ENDIF -->

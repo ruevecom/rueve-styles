@@ -1,0 +1,124 @@
+<!-- INCLUDE ucp_header.html -->
+<!-- IF GROUP_NAME --><h2<!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{GROUP_NAME}</h2><!-- ENDIF -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<!-- IF S_ERROR --><p class="error">{ERROR_MSG}</p><!-- ENDIF -->
+<!-- IF S_EDIT -->
+	<div class="forabg">
+		<div class="header">{L_GROUP_DETAILS}</div>
+		<div class="post bg2">{L_GROUP_NAME}{L_COLON}
+		<!-- IF S_SPECIAL_GROUP --><b<!-- IF GROUP_COLOUR --> style="color: #{GROUP_COLOUR};"<!-- ENDIF -->>{GROUP_NAME}</b> <input name="group_name" type="hidden" value="{GROUP_INTERNAL_NAME}" />
+		<!-- ELSE --><input name="group_name" type="text" id="group_name" value="{GROUP_INTERNAL_NAME}" class="inputbox" /><!-- ENDIF --></div>
+		<div class="post bg1">{L_GROUP_DESC}{L_COLON}<br />
+		<textarea id="group_desc" name="group_desc" rows="4" cols="25" class="inputbox">{GROUP_DESC}</textarea><br />
+		<input type="checkbox" class="radio" name="desc_parse_bbcode" id="desc_parse_bbcode"<!-- IF S_DESC_BBCODE_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_BBCODE} 
+		<input type="checkbox" class="radio" name="desc_parse_smilies" id="desc_parse_smilies"<!-- IF S_DESC_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_SMILIES} 
+		<input type="checkbox" class="radio" name="desc_parse_urls" id="desc_parse_urls"<!-- IF S_DESC_URLS_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_URLS}</div>
+		<!-- IF not S_SPECIAL_GROUP -->
+		<div class="post bg1">{L_GROUP_TYPE}{L_COLON}<br /><i>{L_GROUP_TYPE_EXPLAIN}</i><br />
+			<input type="radio" class="radio" name="group_type" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN} 
+			<input type="radio" class="radio" name="group_type" value="{GROUP_TYPE_OPEN}"{GROUP_OPEN} /> {L_GROUP_REQUEST} 
+			<input type="radio" class="radio" name="group_type" value="{GROUP_TYPE_CLOSED}"{GROUP_CLOSED} /> {L_GROUP_CLOSED} 
+			<input type="radio" class="radio" name="group_type" value="{GROUP_TYPE_HIDDEN}"{GROUP_HIDDEN} /> {L_GROUP_HIDDEN}</div>
+		<!-- ELSE -->
+			<input name="group_type" type="hidden" value="{GROUP_TYPE_SPECIAL}" />
+		<!-- ENDIF -->
+	</div>
+	<div class="forabg">
+		<div class="header">{L_GROUP_SETTINGS_SAVE}</div>
+		<div class="post bg1">{L_GROUP_COLOR}{L_COLON}<br /><i>{L_GROUP_COLOR_EXPLAIN}</i><br />
+		<input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="6" maxlength="6" class="inputbox autowidth" />
+		<span style="background-color: #{GROUP_COLOUR};">&nbsp;&nbsp;&nbsp;</span>
+		[ <a href="#" id="color_palette_toggle">{L_COLOUR_SWATCH}</a> ]
+		<div id="color_palette_placeholder" class="hidden" data-orientation="h" data-height="12" data-width="15" data-target="#group_colour"></div>
+		</div>
+		<div class="post bg1">{L_GROUP_RANK}{L_COLON}<br />
+		<select name="group_rank" id="group_rank">{S_RANK_OPTIONS}</select></div>
+	</div>
+	<!-- INCLUDE ucp_avatar_options.html -->
+	<div class="panel submit-buttons">
+		{S_HIDDEN_FIELDS}
+		<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+		<input type="submit" name="update" value="{L_SUBMIT}" class="button1" />
+		{S_FORM_TOKEN}
+	</div>
+<!-- ELSEIF S_LIST -->
+	<table class="table1" width="100%">
+	<thead>
+	<tr>
+		<th class="header">{L_MEMBERS}</th>
+		<th class="header">{L_MARK}</th>
+	</tr>
+	</thead>
+	<tbody>
+	<!-- IF .leader -->
+	<tr><td class="post bg3" colspan="2">{L_GROUP_LEAD}</td></tr>
+	<!-- BEGIN leader -->
+		<tr class="<!-- IF leader.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td class="post"><b>{leader.USERNAME_FULL}</b><br />
+			{L_GROUP_DEFAULT}{L_COLON} <!-- IF leader.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
+			<td class="mark">&nbsp;</td>
+		</tr>
+	<!-- END leader -->
+	<!-- ENDIF -->
+	<!-- BEGIN member -->
+		<!-- IF member.S_PENDING -->
+		<tr><td class="post bg3" colspan="2">{L_GROUP_PENDING}</td></tr>
+		<!-- ELSEIF member.S_APPROVED -->
+		<tr><td class="post bg3" colspan="2">{L_GROUP_APPROVED}</td></tr>
+		<!-- ELSE -->
+		<tr class="<!-- IF member.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td class="post">{member.USERNAME_FULL}<br />
+			{L_GROUP_DEFAULT}{L_COLON} <!-- IF member.S_GROUP_DEFAULT -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></td>
+			<td class="mark"><input type="checkbox" name="mark[]" value="{member.USER_ID}" /></td>
+		</tr>
+		<!-- ENDIF -->
+	<!-- BEGINELSE -->
+	<tr><td class="post bg3" colspan="2">{L_GROUPS_NO_MEMBERS}</td></tr>
+	<!-- END member -->
+	</tbody>
+	</table>
+	<!-- IF .pagination -->
+	<div class="action-bar bottom">
+		<div class="pagination"> 
+			<!-- INCLUDE pagination.html -->
+		</div>
+	</div>
+	<!-- ENDIF -->
+	<div class="action-bar">
+		<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
+		<input class="button2" type="submit" name="update" value="{L_SUBMIT}" />
+		<div class="rightside"><a href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
+	</div>
+	<div class="forabg">
+		<div class="header">{L_ADD_USERS}</div>
+		<div class="post bg2"><i>{L_ADD_USERS_UCP_EXPLAIN}</i></div>
+		<div class="post bg1">{L_USER_GROUP_DEFAULT}{L_COLON}<br /><i>{L_USER_GROUP_DEFAULT_EXPLAIN}</i><br />
+		<input type="radio" name="default" id="default1" value="1" /> {L_YES} 
+		<input type="radio" name="default" id="default0" value="0" checked="checked" /> {L_NO}</div>
+		<div class="post bg1">{L_USERNAME}{L_COLON}<br /><i>{L_USERNAMES_EXPLAIN}</i><br />
+		<textarea name="usernames" id="usernames" rows="3" cols="25" class="inputbox"></textarea><br />
+		<a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></div>
+	</div>
+	<div class="panel submit-buttons">
+		<input class="button1" type="submit" name="addusers" value="{L_SUBMIT}" />
+		{S_FORM_TOKEN}
+	</div>
+<!-- ELSE -->
+	<div class="post bg2"><i>{L_GROUPS_EXPLAIN}</i></div>
+	<!-- IF .leader -->
+	<div class="forabg">
+	<div class="header">{L_GROUP_LEADER}/{L_OPTIONS}</div>
+		<!-- BEGIN leader -->
+		<div class="row<!-- IF leader.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+		<a title="{L_EDIT}" href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a><br />
+		<!-- IF leader.GROUP_DESC -->{leader.GROUP_DESC}<br /><!-- ENDIF -->
+		<a href="{leader.U_LIST}" class="button">{L_GROUP_LIST}</a>
+		</div>
+		<!-- END leader -->
+	</div>
+	<!-- ELSE -->
+	<div class="panel"><b>{L_NO_LEADERS}</b></div>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+</form>
+<!-- INCLUDE ucp_footer.html -->

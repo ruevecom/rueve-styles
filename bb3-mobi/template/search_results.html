@@ -1,0 +1,82 @@
+<!-- INCLUDE overall_header.html -->
+<!-- EVENT search_results_header_before -->
+<h2><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE IF SEARCH_WORDS --><a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+<!-- IF SEARCHED_QUERY --><p>{L_SEARCHED_QUERY}{L_COLON} <b>{SEARCHED_QUERY}</b></p><!-- ENDIF -->
+<!-- IF IGNORED_WORDS --><p>{L_IGNORED_TERMS}{L_COLON} <b>{IGNORED_WORDS}</b></p><!-- ENDIF -->
+<!-- IF PHRASE_SEARCH_DISABLED --><p><b>{L_PHRASE_SEARCH_DISABLED}</b></p><!-- ENDIF -->
+<!-- EVENT search_results_header_after -->
+
+<!-- IF SEARCH_MATCHES --><div class="header">{SEARCH_MATCHES}</div><!-- ENDIF -->
+<!-- IF S_SHOW_TOPICS -->
+<!-- IF .searchresults -->
+<!-- BEGIN searchresults -->
+<!-- EVENT search_results_topic_before -->
+<div class="small-icon row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+<div class="inner">
+<!-- IF searchresults.TOPIC_ICON_IMG --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}" title="{searchresults.TOPIC_FOLDER_IMG_ALT}" alt="" /><!-- ENDIF -->
+<!-- IF searchresults.S_UNREAD_TOPIC and not S_IS_BOT --><a href="{searchresults.U_NEWEST_POST}"><img src="{T_THEME_PATH}/images/icon_post_target_unread.gif" alt=""/></a><!-- ENDIF -->
+<!-- EVENT topiclist_row_prepend -->
+<!-- IF searchresults.S_HAS_POLL --><img src="{T_THEME_PATH}/images/icon_topic_poll.gif" alt=""/><!-- ENDIF -->
+<!-- IF searchresults.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF -->
+<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED -->
+<a href="{searchresults.U_MCP_QUEUE}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_unapproved.gif" alt=""/></a>
+<!-- ENDIF -->
+<!-- IF searchresults.S_TOPIC_DELETED -->
+<a href="{searchresults.U_MCP_QUEUE}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_deleted.png" alt=""/></a>
+<!-- ENDIF -->
+<!-- IF searchresults.S_TOPIC_REPORTED -->
+<a href="{searchresults.U_MCP_REPORT}" class="rightside"><img src="{T_THEME_PATH}/images/icon_topic_reported.gif" alt=""/></a>
+<!-- ENDIF -->
+<a href="{searchresults.U_VIEW_TOPIC}" class="topictitle">{searchresults.TOPIC_TITLE}</a> <span>[{searchresults.TOPIC_REPLIES}]</span>	<!-- IF not S_IS_BOT --><br /><!-- IF searchresults.TOPIC_AUTHOR != searchresults.LAST_POST_AUTHOR --><span<!-- IF searchresults.TOPIC_AUTHOR_COLOUR --> style="color:{searchresults.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{searchresults.TOPIC_AUTHOR}</span> / <!-- ENDIF -->{searchresults.LAST_POST_AUTHOR_FULL} &laquo; <a href="{searchresults.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{searchresults.LAST_POST_TIME}</a><!-- ENDIF -->
+<p>&raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></p>
+</div>
+<!-- EVENT topiclist_row_append -->
+</div>
+<!-- EVENT search_results_topic_after -->
+<!-- END searchresults -->
+<!-- ELSE -->
+<div class="post bg3"><b>{L_NO_SEARCH_RESULTS}</b></div>
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- BEGIN searchresults -->
+<!-- EVENT search_results_post_before -->
+<div class="post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+<!-- IF searchresults.S_IGNORE_POST -->
+	<div class="content">{searchresults.L_IGNORE_POST}</div>
+<!-- ELSE -->
+	<!-- EVENT search_results_postprofile_before -->
+	<p class="author"><b>{searchresults.POST_AUTHOR_FULL}</b> &raquo; {searchresults.POST_DATE}</p>
+	<p><a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a> &raquo; <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></p>
+	<!-- EVENT search_results_postprofile_after -->
+	<div class="content">{searchresults.MESSAGE}</div>
+	{L_REPLIES}{L_COLON} {searchresults.TOPIC_REPLIES} / {L_VIEWS}{L_COLON} {searchresults.TOPIC_VIEWS}
+<!-- ENDIF -->
+<!-- IF not searchresults.S_IGNORE_POST -->
+<a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}side">{L_JUMP_TO_POST}</a><!-- ENDIF -->
+</div>
+<!-- EVENT search_results_post_after -->
+<!-- BEGINELSE -->
+<div class="post bg3"><b>{L_NO_SEARCH_RESULTS}</b></div>
+<!-- END searchresults -->
+<!-- ENDIF -->
+<!-- IF .pagination or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
+<form method="post" action="{S_SEARCH_ACTION}">
+<div class="submit-buttons">
+<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
+	<!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}<!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --> {S_SELECT_SORT_KEY}
+	{S_SELECT_SORT_DIR}<!-- ENDIF -->
+	<input type="submit" name="sort" value="{L_GO}" class="button2" />
+<!-- ENDIF -->
+</div>
+</form>
+<hr />
+<!-- ENDIF -->
+<!-- EVENT search_results_searchbox_after -->
+<!-- IF .pagination -->
+<div class="action-bar">
+	<div class="rightside pagination">
+		<!-- INCLUDE pagination.html -->
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

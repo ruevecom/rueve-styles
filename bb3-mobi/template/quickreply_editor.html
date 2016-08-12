@@ -1,0 +1,19 @@
+<form method="post" action="{U_QR_ACTION}" id="qr_postform">
+<!-- EVENT quickreply_editor_panel_before -->
+<div class="panel">
+<h2>{L_QUICKREPLY}</h2>
+<input type="hidden" name="subject" value="{SUBJECT}" class="inputbox autowidth" />
+<!-- EVENT quickreply_editor_message_before -->
+<div id="message-box">
+	<textarea name="message" rows="4" cols="25" class="inputbox"></textarea>
+</div>
+<!-- EVENT quickreply_editor_message_after -->
+<div class="submit-buttons">
+{S_FORM_TOKEN}
+{QR_HIDDEN_FIELDS}
+<input type="submit" name="preview" value="{L_PREVIEW}" class="button2" id="qr_full_editor" />&nbsp;
+<input type="submit" name="post" value="{L_SUBMIT}" class="button1" />&nbsp;
+</div>
+</div>
+<!-- EVENT quickreply_editor_panel_after -->
+</form>

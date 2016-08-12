@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{META}
+<!-- EVENT overall_header_feeds -->
+<title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
+<!-- IF U_CANONICAL --><link rel="canonical" href="{U_CANONICAL}"><!-- ENDIF -->
+<!--
+	phpBB style name: bb3-mobi
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      Anvar Stybaev ( http://bb3.mobi )
+-->
+<!-- IF S_ALLOW_CDN -->
+<script>
+	WebFontConfig = {
+		google: {
+			families: ['Open+Sans:600:cyrillic-ext,latin,greek-ext,greek,vietnamese,latin-ext,cyrillic']
+		}
+	};
+
+	(function(d) {
+		var wf = d.createElement('script'), s = d.scripts[0];
+		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+		wf.async = true;
+		s.parentNode.insertBefore(wf, s);
+	})(document);
+</script>
+<!-- ENDIF -->
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
+<link href="{T_THEME_PATH}/popups.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<link href="{T_THEME_PATH}/responsive.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" media="only screen and (min-width: 320px)">
+<!-- IF S_PLUPLOAD -->
+<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<!-- ENDIF -->
+<!-- EVENT overall_header_head_append -->
+{$STYLESHEETS}
+<!-- EVENT overall_header_stylesheets_after -->
+</head>
+<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}">
+<!-- EVENT overall_header_body_before -->
+<div id="wrap">
+<a id="top" class="anchor"></a>
+<div id="page-header">
+	<div class="headerbar">
+		<div class="inner">
+			<a id="logo" class="logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->">{SITE_LOGO_IMG}</a>
+			<h1>{SITENAME}</h1>
+			<p>{SITE_DESCRIPTION}</p>
+			<!-- EVENT overall_header_searchbox_before -->
+			<!-- IF S_REGISTERED_USER -->
+			<span class="avatar sign rightside"><a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}"><!-- IF CURRENT_USER_AVATAR -->{CURRENT_USER_AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="{L_READ_PROFILE}" /><!-- ENDIF --></a></span>
+			<!-- ENDIF -->
+		</div>
+	</div>
+	<!-- EVENT overall_header_navbar_before -->
+	<!-- INCLUDE navbar_header.html -->
+</div>
+<!-- EVENT overall_header_page_body_before -->
+<a id="start_here" class="anchor"></a>
+<div id="page-body">
+	<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+	<div class="panel"><b>{L_INFORMATION}{L_COLON}</b><br />{L_BOARD_DISABLED}</div>
+	<!-- ENDIF -->
+	<!-- EVENT overall_header_content_before -->

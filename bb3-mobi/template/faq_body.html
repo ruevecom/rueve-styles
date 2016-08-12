@@ -1,0 +1,40 @@
+<!-- INCLUDE overall_header.html -->
+<h2>{L_FAQ_TITLE}</h2>
+<div class="panel" id="faqlinks">
+<!-- BEGIN faq_block -->
+<!-- IF faq_block.SWITCH_COLUMN or (SWITCH_COLUMN_MANUALLY and faq_block.S_ROW_COUNT == 4) -->
+</div>
+<div class="panel">
+<!-- ENDIF -->
+<div class="row bg3">
+<a href="#f{faq_block.S_ROW_COUNT}" onclick="toggle_faq('f{faq_block.S_ROW_COUNT}');">{faq_block.BLOCK_TITLE}</a></div>
+<div id="f{faq_block.S_ROW_COUNT}" class="hidden">
+	<!-- BEGIN faq_row -->
+	<div class="post<!-- IF faq_block.faq_row.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --> dropdown-container">
+	<a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}" class="topictitle dropdown-trigger">{faq_block.faq_row.FAQ_QUESTION}</a>
+		<div class="dropdown hidden content" id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">
+			{faq_block.faq_row.FAQ_ANSWER}
+			<!-- IF not faq_block.faq_row.S_LAST_ROW --><hr /><!-- ELSE --><br class="clear" /><!-- ENDIF -->
+			<a href="#faqlinks" class="rightside" onclick="toggle_faq('f{faq_block.S_ROW_COUNT}');">{L_BACK_TO_TOP}</a>
+		</div>
+	</div>
+	<!-- END faq_row -->
+</div>
+<!-- END faq_block -->
+</div>
+
+<script type="text/javascript">
+function toggle_faq(id) {
+	var e = document.getElementById(id);
+	if (e.style.display == "none" || e.style.display == "") {
+		e.style.display = "block";
+		return true;
+	}
+	else {
+		e.style.display = "none";
+		return true;
+	}
+	return false;
+}
+</script>
+<!-- INCLUDE overall_footer.html -->

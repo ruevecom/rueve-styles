@@ -1,0 +1,55 @@
+/* Responsive Touch CSS */
+#wrap {
+	margin: 0 auto;
+	max-width: 640px;
+}
+#wrap, .headerbar, .navbar, .panel {
+	border-radius: 7px;
+	padding: 3px;
+}
+.headerbar p { width: 200px; display: inline-block; }
+@media only screen and (max-width: 420px), only screen and (max-device-width: 420px) {
+	.headerbar p { display: none; }
+}
+.responsive-menu-link:before,
+.responsive-tab-link:before {
+	left: 4px;
+	top: 9px;
+	height: .175em;
+	width: 16px;
+}
+.panel {
+	margin: 4px 0;
+}
+.panel, .row, .post  {
+	padding: 4px;
+}
+.forumtitle, .topictitle {
+	font-size: 13px;
+	padding: 3px;
+}
+.content { font-size: 16px; }
+div.header a {
+	font-size: 14px;
+	display: inline-block;
+	padding: 4px;
+}
+div.row .forumtitle, div.row .topictitle {
+	line-height: 2.0em;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.navbar li.small-icon a {
+	padding-left: 4px;
+	padding-right: 4px;
+	display: inline-block;
+}
+.inputbox {
+	line-height: 1.6em;
+}
+.button {
+	border-radius: 4px;
+}
+.button, .button1 {
+	padding: 3px 9px;
+}

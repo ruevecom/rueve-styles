@@ -1,0 +1,61 @@
+<!-- INCLUDE overall_header.html -->
+<h2>{L_SEARCH}</h2>
+<!-- EVENT search_body_form_before -->
+<form method="get" action="{S_SEARCH_ACTION}" data-focus="keywords">
+<div class="panel">
+	<div class="inner">
+	<h3>{L_SEARCH_QUERY}</h3>
+	<p>{L_SEARCH_KEYWORDS}{L_COLON}<br /><i>{L_SEARCH_KEYWORDS_EXPLAIN}</i><br />
+	<input type="search" class="inputbox" name="keywords" size="40" title="{L_SEARCH_KEYWORDS}" />
+	<input type="radio" name="terms" value="all" checked="checked" /> {L_SEARCH_ALL_TERMS}
+	<input type="radio" name="terms" value="any" /> {L_SEARCH_ANY_TERMS}</p>
+	<p>{L_SEARCH_AUTHOR}{L_COLON}<br /><i>{L_SEARCH_AUTHOR_EXPLAIN}</i><br />
+	<input type="search" class="inputbox" name="author" size="40" title="{L_SEARCH_AUTHOR}" /></p>
+	</div>
+</div>
+<div class="panel bg2">
+	<div class="inner">
+	<h3>{L_SEARCH_OPTIONS}</h3>
+	<p>{L_SEARCH_FORUMS}{L_COLON}<br /><i>{L_SEARCH_FORUMS_EXPLAIN}</i><br />
+	<select name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select></p>
+	<p>{L_SEARCH_SUBFORUMS}{L_COLON}<br />
+	<input type="radio" name="sc" value="1" checked="checked" /> {L_YES}
+	<input type="radio" name="sc" value="0" /> {L_NO}</p>
+	<p>{L_SEARCH_WITHIN}{L_COLON}<br />
+	<input type="radio" name="sf" value="all" checked="checked" /> {L_SEARCH_TITLE_MSG}<br />
+	<input type="radio" name="sf" value="msgonly" /> {L_SEARCH_MSG_ONLY}<br />
+	<input type="radio" name="sf" value="titleonly" /> {L_SEARCH_TITLE_ONLY}<br />
+	<input type="radio" name="sf" value="firstpost" /> {L_SEARCH_FIRST_POST}</p>
+	<hr class="dashed" />
+	<p>{L_DISPLAY_RESULTS}{L_COLON}<br />
+	<input type="radio" name="sr" value="posts" checked="checked" /> {L_POSTS}
+	<input type="radio" name="sr" value="topics" /> {L_TOPICS}</p>
+	<p>{L_RESULT_SORT}{L_COLON}<br />{S_SELECT_SORT_KEY}<br />
+	<input type="radio" name="sd" value="a" /> {L_SORT_ASCENDING}
+	<input type="radio" name="sd" value="d" checked="checked" /> {L_SORT_DESCENDING}</p>
+	<p>{L_RESULT_DAYS}{L_COLON}<br />{S_SELECT_SORT_DAYS}</p>
+	<p>{L_RETURN_FIRST}{L_COLON}<br />
+	<select name="ch" title="{L_RETURN_FIRST}">{S_CHARACTER_OPTIONS}</select> {L_POST_CHARACTERS}</p>
+	</div>
+</div>
+<div class="panel bg3">
+	<div class="submit-buttons">
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+	<input type="submit" name="submit" value="{L_SEARCH}" class="button1" />
+	</div>
+</div>
+</form>
+<!-- IF .recentsearch -->
+<div class="forumbg">
+	<div class="inner">
+	<div class="header">{L_RECENT_SEARCHES}</div>
+	<!-- BEGIN recentsearch -->
+	<div class="row <!-- IF recentsearch.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		<a href="{recentsearch.U_KEYWORDS}">{recentsearch.KEYWORDS}</a> [{recentsearch.TIME}]</div>
+	<!-- BEGINELSE -->
+	<div class="row">{L_NO_RECENT_SEARCHES}</div>
+	<!-- END recentsearch -->
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

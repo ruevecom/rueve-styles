@@ -1,0 +1,25 @@
+<h3>{L_POST_REVIEW}</h3>
+<i>{L_POST_REVIEW_EXPLAIN}</i>
+<!-- BEGIN post_review_row -->
+<!-- IF post_review_row.S_IGNORE_POST -->
+<div class="post bg3">
+	<div class="inner">
+		{post_review_row.L_IGNORE_POST}
+<!-- ELSE -->
+<div id="ppr{post_review_row.POST_ID}" class="post <!-- IF post_review_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+	<div class="inner">
+<!-- ENDIF -->
+	<p class="author"><b>{post_review_row.POST_AUTHOR_FULL}</b> &raquo; {post_review_row.POST_DATE}</p>
+	<div class="content">{post_review_row.MESSAGE}</div>
+	<!-- IF post_review_row.S_HAS_ATTACHMENTS -->
+	<div class="attachbox">
+		<b>{L_ATTACHMENTS}</b>
+		<!-- BEGIN attachment -->
+		{post_review_row.attachment.DISPLAY_ATTACHMENT}
+		<!-- END attachment -->
+	</div>
+	<!-- ENDIF -->
+	</div>
+</div>
+<!-- END post_review_row -->
+<hr />

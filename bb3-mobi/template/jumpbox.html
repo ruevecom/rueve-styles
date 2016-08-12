@@ -1,0 +1,18 @@
+<!-- IF SEARCH_TOPIC -->
+<p> &laquo; <a href="{U_SEARCH_TOPIC}">{L_RETURN_TO_TOPIC}</a></p>
+<!-- ELSEIF S_SEARCH_ACTION -->
+<p> &laquo; <a href="{U_SEARCH}" title="{L_SEARCH_ADV}">{L_GO_TO_SEARCH_ADV}</a></p>
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_JUMPBOX -->
+<div class="panel">
+<select onchange="top.location=this.value" id="quickmod">
+<!-- BEGIN jumpbox_forums -->
+<!-- IF jumpbox_forums.FORUM_ID neq -1 -->
+<option value="{jumpbox_forums.LINK}"<!-- IF jumpbox_forums.LINK == U_VIEW_FORUM --> selected="selected"<!-- ENDIF --><!-- IF jumpbox_forums.S_IS_CAT --> disabled="disabled"<!-- ENDIF -->>
+<!-- BEGIN level -->&nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
+<!-- ENDIF -->
+<!-- END jumpbox_forums -->
+</select>
+<input type="submit" onclick="location=quickmod.value" name="{L_GO}" class="button2" />
+</div>
+<!-- ENDIF -->

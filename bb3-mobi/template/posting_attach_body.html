@@ -1,0 +1,41 @@
+<div class="panel bg3">
+<i>{L_ADD_ATTACHMENT_EXPLAIN} <span class="hidden" id="drag-n-drop-message"><br />{L_PLUPLOAD_DRAG_TEXTAREA}</span></i>
+<div id="attach-panel-basic">
+	{L_FILENAME}{L_COLON}<br />
+	<input type="file" name="fileupload" id="fileupload" maxlength="{FILESIZE}" value="" class="inputbox autowidth" />
+	<input type="submit" name="add_file" value="{L_ADD_FILE}" class="button2" onclick="upload = true;" /><br />
+	{L_FILE_COMMENT}{L_COLON}<br />
+	<textarea name="filecomment" id="filecomment" rows="1" cols="25" class="inputbox">{FILE_COMMENT}</textarea>
+</div>
+<div id="attach-panel-multi"><input type="button" class="button2" value="{L_PLUPLOAD_ADD_FILES}" id="add_files" /></div>
+<div class="<!-- IF not .attach_row --> hidden<!-- ENDIF -->" id="file-list-container">
+<div id="file-list">
+	<div class="panel attach-row" id="attach-row-tpl">
+		<span class="attach-name">
+		<span class="file-status"></span>
+		<span class="file-name ellipsis-text"></span>
+		 <span class="file-size"></span>
+		 <span class="file-progress"><span class="file-progress-bar"></span></span>
+		</span>
+		<span class="attach-controls">
+		<input type="button" value="{L_PLACE_INLINE}" class="button2 hidden file-inline-bbcode" />&nbsp;
+		<input type="button" value="{L_DELETE_FILE}" class="button2 file-delete" /></span>
+		<textarea rows="1" cols="30" class="inputbox"></textarea>
+	</div>
+	<!-- BEGIN attach_row -->
+	<div class="panel attach-row <!-- IF attach_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->" data-attach-id="{attach_row.ATTACH_ID}">
+		<span class="attach-name">
+		<span class="file-status file-uploaded"></span>
+		<span class="file-name ellipsis-text"><a href="{attach_row.U_VIEW_ATTACHMENT}">{attach_row.FILENAME}</a></span>
+		<span class="file-size">{attach_row.FILESIZE}</span>
+		</span>
+		<span class="attach-controls"><!-- IF S_INLINE_ATTACHMENT_OPTIONS -->
+		<input type="button" value="{L_PLACE_INLINE}" class="button2 file-inline-bbcode" />&nbsp;<!-- ENDIF -->
+		<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="button2 file-delete" /></span>
+		<textarea name="comment_list[{attach_row.ASSOC_INDEX}]" rows="1" cols="30" class="inputbox">{attach_row.FILE_COMMENT}</textarea>
+		{attach_row.S_HIDDEN}
+	</div>
+	<!-- END attach_row -->
+</div>
+</div>
+</div>

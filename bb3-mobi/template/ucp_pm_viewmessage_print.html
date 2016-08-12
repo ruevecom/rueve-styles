@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex" />
+{META}
+<title>{SITENAME} &bull; {PAGE_TITLE}</title>
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
+<!-- EVENT ucp_pm_viewmessage_print_head_append -->
+</head>
+<body id="phpbb">
+<div id="wrap">
+<a id="top" class="anchor" accesskey="t"></a>
+<div id="page-header">
+	<h1>{SITENAME}</h1>
+	<p>{SITE_DESCRIPTION}</p>
+	<h2>{L_PRIVATE_MESSAGING}</h2>
+</div>
+<div id="page-body">
+<div class="page-number">{PAGE_NUMBER}</div>
+<div class="post">
+	<h3>{SUBJECT}</h3>
+	<div class="date">{L_SENT_AT} <b>{SENT_DATE}</b></div>
+	<div class="author">{L_PM_FROM} <b>{MESSAGE_AUTHOR}</b></div>
+	<!-- IF S_TO_RECIPIENT -->
+		<div class="author">{L_TO} <b><!-- BEGIN to_recipient -->{to_recipient.NAME}&nbsp;<!-- END to_recipient --></b></div>
+	<!-- ENDIF -->
+	<!-- IF S_BCC_RECIPIENT -->
+		<div class="author">{L_BCC} <b><!-- BEGIN bcc_recipient -->{bcc_recipient.NAME}&nbsp;<!-- END bcc_recipient --></b></div>
+	<!-- ENDIF -->
+	<hr />
+	<div class="content">{MESSAGE}</div>
+</div>
+<hr />
+</div>
+<div id="page-footer">
+	<div class="page-number">{S_TIMEZONE}<br />{PAGE_NUMBER}</div>
+	<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/
+	<br /><a href="http://bb3.mobi" title="Мобильная версия phpBB">Mobile Version</a> &copy; <span>Anvar (apwa.ru)</span></div>
+</div>
+</div>
+</body>
+</html>

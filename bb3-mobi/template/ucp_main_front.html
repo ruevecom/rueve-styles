@@ -1,0 +1,52 @@
+<!-- INCLUDE ucp_header.html -->
+<div class="post bg2"><i>{L_UCP_WELCOME}</i></div>
+<!-- IF .topicrow -->
+<div class="header">{L_IMPORTANT_NEWS}</div>
+<!-- BEGIN topicrow -->
+<div class="row<!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+	<!-- IF topicrow.S_UNREAD_TOPIC and not S_IS_BOT -->
+	<a href="{topicrow.U_NEWEST_POST}"><img src="{T_THEME_PATH}/images/icon_post_target_unread.gif" alt=""/></a>
+	<!-- ENDIF -->
+	<!-- IF topicrow.ATTACH_ICON_IMG --><img src="{T_THEME_PATH}/images/icon_topic_attach.gif" alt=""/><!-- ENDIF -->
+	<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> <span>[<!-- IF topicrow.REPLIES -->{topicrow.REPLIES}<!-- ELSE -->1<!-- ENDIF -->]</span>
+	<!-- IF not S_IS_BOT -->
+	<br /><!-- IF topicrow.TOPIC_AUTHOR != topicrow.LAST_POST_AUTHOR --><span<!-- IF topicrow.TOPIC_AUTHOR_COLOUR --> style="color:{topicrow.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.TOPIC_AUTHOR}</span> / <!-- ENDIF --><span<!-- IF topicrow.LAST_POST_AUTHOR_COLOUR --> style="color:{topicrow.LAST_POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span> &laquo; <a href="{topicrow.U_LAST_POST}" title="{L_GOTO_LAST_POST}">{topicrow.LAST_POST_TIME}</a>
+	<!-- ENDIF -->
+	<!-- IF .topicrow.pagination -->
+	<div class="rightside pagination">
+	<!-- BEGIN pagination -->
+		<!-- IF topicrow.pagination.S_IS_PREV -->
+		<!-- ELSEIF topicrow.pagination.S_IS_CURRENT --><span class="active button">{topicrow.pagination.PAGE_NUMBER}</span>
+		<!-- ELSEIF topicrow.pagination.S_IS_ELLIPSIS --><span class="ellipsis button">{L_ELLIPSIS}</span>
+		<!-- ELSEIF topicrow.pagination.S_IS_NEXT -->
+		<!-- ELSE --><a href="{topicrow.pagination.PAGE_URL}" class="button">{topicrow.pagination.PAGE_NUMBER}</a> 
+		<!-- ENDIF -->
+	<!-- END pagination -->
+	</div>
+	<!-- ENDIF -->
+</div>
+<!-- END topicrow -->
+<!-- ENDIF -->
+<div class="panel">
+<h3>{L_YOUR_DETAILS}</h3>
+	<!-- EVENT ucp_main_front_user_activity_before -->
+	<p class="post bg3">{L_JOINED}{L_COLON} <i>{JOINED}</i></p>
+	<p class="post bg3">{L_LAST_ACTIVE}{L_COLON} <i>{LAST_VISIT_YOU}</i></p>
+	<p class="post bg3">{L_TOTAL_POSTS}{L_COLON} <i><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <b><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></b><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></i></p>
+	<!-- IF ACTIVE_FORUM != '' --><p class="post bg3">{L_ACTIVE_IN_FORUM}{L_COLON} <i><b><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></b><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</i></p><!-- ENDIF -->
+	<!-- IF ACTIVE_TOPIC != '' --><p class="post bg3">{L_ACTIVE_IN_TOPIC}{L_COLON} <i><b><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></b><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</i></p><!-- ENDIF -->
+	<!-- IF WARNINGS --><p class="post bg3">{L_YOUR_WARNINGS}{L_COLON} <i class="error">{WARNING_IMG} [{WARNINGS}]</i></p><!-- ENDIF -->
+	<!-- EVENT ucp_main_front_user_activity_after -->
+</div>
+<!-- IF .friends_online or .friends_offline -->
+<div class="panel">
+	<b>{L_FRIENDS}</b>
+	<!-- BEGIN friends_online -->
+	<p><img src="{T_THEME_PATH}/images/icon_online.gif" title="{L_FRIENDS_ONLINE}" alt="" />{friends_online.USERNAME_FULL}<!-- IF S_SHOW_PM_BOX --> <input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="button2" /><!-- ENDIF --><!-- IF friends_online.S_LAST_ROW and .friends_offline --><hr /><!-- ENDIF --></p>
+	<!-- END friends_online -->
+	<!-- BEGIN friends_offline -->
+	<p><img src="{T_THEME_PATH}/images/icon_offline.gif" title="{L_FRIENDS_OFFLINE}" alt="" /> {friends_offline.USERNAME_FULL}<!-- IF S_SHOW_PM_BOX --><br /><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="button2" /><!-- ENDIF --></p>
+	<!-- END friends_offline -->
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE ucp_footer.html -->

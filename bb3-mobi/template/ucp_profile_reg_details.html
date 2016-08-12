@@ -1,0 +1,29 @@
+<!-- INCLUDE ucp_header.html -->
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+<div class="bg3">
+<!-- IF S_FORCE_PASSWORD -->
+<p class="error">{L_FORCE_PASSWORD_EXPLAIN}</p>
+<!-- ENDIF -->
+<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+<!-- EVENT ucp_profile_register_details_before -->
+<div class="post bg3">{L_USERNAME}{L_COLON}
+<!-- IF S_CHANGE_USERNAME --><br /><i>{L_USERNAME_EXPLAIN}</i><br /><input type="text" name="username" value="{USERNAME}" class="inputbox" title="{L_USERNAME}" /><!-- ELSE --><b>{USERNAME}</b><!-- ENDIF --></div>
+<div class="post bg1">{L_EMAIL_ADDRESS}{L_COLON}<br />
+<!-- IF S_CHANGE_EMAIL --><input type="email" name="email" maxlength="100" value="{EMAIL}" class="inputbox" title="{L_EMAIL_ADDRESS}" autocomplete="off" /><!-- ELSE --><b>{EMAIL}</b><!-- ENDIF --></div>
+<!-- IF S_CHANGE_PASSWORD -->
+<div class="post bg1">{L_NEW_PASSWORD}{L_COLON}<br /><i>{L_CHANGE_PASSWORD_EXPLAIN}</i><br />
+<input type="password" name="new_password" maxlength="255" value="{NEW_PASSWORD}" class="inputbox" title="{L_CHANGE_PASSWORD}" autocomplete="off" /></div>
+<div class="post bg1">{L_CONFIRM_PASSWORD}{L_COLON}<br /><i>{L_CONFIRM_PASSWORD_EXPLAIN}</i><br />
+<input type="password" name="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" class="inputbox" title="{L_CONFIRM_PASSWORD}" autocomplete="off" /></div>
+<!-- ENDIF -->
+<!-- EVENT ucp_profile_register_details_after -->
+<div class="post bg1">{L_CURRENT_PASSWORD}{L_COLON}<br /><i><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></i><br />
+<input type="password" name="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="inputbox" title="{L_CURRENT_PASSWORD}" autocomplete="off" /></div>
+</div>
+<div class="panel submit-buttons">
+{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
+<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+{S_FORM_TOKEN}
+</div>
+</form>
+<!-- INCLUDE ucp_footer.html -->

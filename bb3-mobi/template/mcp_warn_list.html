@@ -1,0 +1,30 @@
+<!-- INCLUDE mcp_header.html -->
+<div class="post bg2"><i>{L_WARNED_USERS_EXPLAIN}</i></div>
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+<div class="header">{L_WARNED_USERS}</div>
+<!-- IF .user -->
+<div class="post bg3">{TOTAL_USERS}</div>
+<!-- BEGIN user -->
+<div class="post <!-- IF user.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<b>{user.USERNAME_FULL}</b> &raquo; {user.WARNING_TIME}
+<div class="content">{L_WARNINGS}{L_COLON} {user.WARNINGS}</div>
+<a href="{user.U_NOTES}" class="button">{L_VIEW_NOTES}</a>
+</div>
+<!-- END user -->
+<div class="post bg3">
+{S_SELECT_SORT_DAYS} {S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR}
+<input type="submit" name="sort" value="{L_GO}" class="button2" />
+</div>
+<!-- IF .pagination --> 
+<div class="action-bar">
+	<div class="rightside pagination">
+		<!-- INCLUDE pagination.html -->
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- ELSE -->
+<div class="post bg3">{L_NO_WARNINGS}</div>
+<!-- ENDIF -->
+<div>{S_FORM_TOKEN}</div>
+</form>
+<!-- INCLUDE mcp_footer.html -->

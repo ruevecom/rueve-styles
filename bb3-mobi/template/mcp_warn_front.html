@@ -1,0 +1,38 @@
+<!-- INCLUDE mcp_header.html -->
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+<div class="panel"><b>{L_WARN_USER}</b>
+<div class="post bg2">{L_SELECT_USER}{L_COLON}<br />
+<input name="username" id="username" type="text" class="inputbox" /></div>
+<a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
+</div>
+<div class="panel submit-buttons">
+	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+	<input type="submit" name="submituser" value="{L_SUBMIT}" class="button1" />
+	{S_FORM_TOKEN}
+</div>
+</form>
+<div class="header">{L_MOST_WARNINGS}</div>
+<!-- IF .highest -->
+<!-- BEGIN highest -->
+<div class="post <!-- IF highest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<b>{highest.USERNAME_FULL}</b> &raquo; {highest.WARNING_TIME}
+<div class="content">{L_WARNINGS}{L_COLON} {highest.WARNINGS}</div>
+<a href="{highest.U_NOTES}" class="button">{L_VIEW_NOTES}</a>
+</div>
+<!-- END highest -->
+<!-- ELSE -->
+<div class="post bg3">{L_NO_WARNINGS}</div>
+<!-- ENDIF -->
+<div class="header">{L_LATEST_WARNINGS}</div>
+<!-- IF .latest -->
+<!-- BEGIN latest -->
+<div class="post <!-- IF latest.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<b>{latest.USERNAME_FULL}</b> &raquo; {latest.WARNING_TIME}
+<div class="content">{L_TOTAL_WARNINGS}{L_COLON} {latest.WARNINGS}</div>
+<a href="{latest.U_NOTES}" class="button">{L_VIEW_NOTES}</a>
+</div>
+<!-- END latest -->
+<!-- ELSE -->
+<div class="post bg3">{L_NO_WARNINGS}</div>
+<!-- ENDIF -->
+<!-- INCLUDE mcp_footer.html -->

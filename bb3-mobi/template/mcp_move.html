@@ -1,0 +1,36 @@
+<!-- IF S_AJAX_REQUEST -->
+<h3>{MESSAGE_TITLE}</h3>
+{MESSAGE_TEXT}
+<!-- IF ADDITIONAL_MSG --><p>{ADDITIONAL_MSG}</p><!-- ENDIF -->
+<p>{L_SELECT_DESTINATION_FORUM}{L_COLON}<br />
+<select name="to_forum_id">{S_FORUM_SELECT}</select></p>
+<!-- IF S_CAN_LEAVE_SHADOW -->
+<p><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" />{L_LEAVE_SHADOW}</p>
+<!-- ENDIF -->
+<!-- IF S_CAN_LOCK_TOPIC -->
+<p><input type="checkbox" name="move_lock_topics" id="move_lock_topics" />{L_LOCK_TOPIC}</p>
+<!-- ENDIF -->
+<div class="submit-buttons">
+	<input type="button" name="confirm" value="{YES_VALUE}" class="button1" />&nbsp;
+	<input type="button" name="cancel" value="{L_NO}" class="button2" />
+</div>
+<!-- ELSE -->
+<!-- INCLUDE overall_header.html -->
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
+<div class="panel">
+<h2>{MESSAGE_TITLE}</h2>
+<!-- IF ADDITIONAL_MSG --><p>{ADDITIONAL_MSG}</p><!-- ENDIF -->
+<p>{L_SELECT_DESTINATION_FORUM}{L_COLON}<br />
+<select name="to_forum_id">{S_FORUM_SELECT}</select></p>
+<!-- IF S_CAN_LEAVE_SHADOW --><p><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" />{L_LEAVE_SHADOW}</p><!-- ENDIF -->
+<!-- IF S_CAN_LOCK_TOPIC --><p><input type="checkbox" name="move_lock_topics" id="move_lock_topics" />{L_LOCK_TOPIC}</p><!-- ENDIF -->
+<div class="content">{MESSAGE_TEXT}</div>
+<div class="submit-buttons">
+	{S_HIDDEN_FIELDS}<input type="submit" name="confirm" value="{YES_VALUE}" class="button1" />&nbsp; 
+	<input type="submit" name="cancel" value="{L_NO}" class="button2" />
+	{S_FORM_TOKEN}
+</div>
+</div>
+</form>
+<!-- INCLUDE overall_footer.html -->
+<!-- ENDIF -->

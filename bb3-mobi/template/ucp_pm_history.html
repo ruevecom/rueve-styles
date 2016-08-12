@@ -1,0 +1,24 @@
+<div class="header">{L_MESSAGE_HISTORY}</div>
+<!-- EVENT ucp_pm_history_review_before -->
+<!-- BEGIN history_row -->
+<div class="post <!-- IF history_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<div class="inner">
+	<p class="author">{history_row.MINI_POST_IMG} {history_row.MESSAGE_AUTHOR_FULL} &raquo; {history_row.SENT_DATE}</p>
+	<div class="content"><!-- IF history_row.MESSAGE -->{history_row.MESSAGE}<!-- ELSE --><span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span><!-- ENDIF --></div>
+
+	<!-- DEFINE $SHOW_PM_HISTORY_POST_BUTTONS = (history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE) -->
+	<!-- EVENT ucp_pm_history_post_buttons_list_before -->
+	<!-- IF $SHOW_PM_HISTORY_POST_BUTTONS -->
+
+	<!-- EVENT ucp_pm_history_post_buttons_before -->
+	<!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
+	<a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}" class="button rightside">{L_QUOTE}</a><!-- ENDIF -->
+	<!-- EVENT ucp_pm_history_post_buttons_after -->
+
+	<!-- ENDIF -->
+	<!-- EVENT ucp_pm_history_post_buttons_list_after -->
+	<div id="message_{history_row.MSG_ID}" style="display: none;">{history_row.DECODED_MESSAGE}</div>
+</div>
+</div>
+<!-- END history_row -->
+<!-- EVENT ucp_pm_history_review_after -->
