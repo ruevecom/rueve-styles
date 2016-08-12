@@ -38,7 +38,7 @@
 	height: 16px;
 	overflow: hidden;
 	text-decoration: none !important;
-	background: url("./images/alert_close.png") 0 0 no-repeat;
+	background: url("http://cdn.ru-eve.com/styles/bb3-mobi/images/alert_close.png") 0 0 no-repeat;
 	margin-top: -7px;
 	margin-right: -31px;
 }
@@ -76,7 +76,7 @@
 }
 
 #loading_indicator {
-	background: #000 url("./images/loading.gif") center center no-repeat;
+	background: #000 url("http://cdn.ru-eve.com/styles/bb3-mobi/images/loading.gif") center center no-repeat;
 	border-radius: 5px;
 	display: none;
 	opacity: 0.8;
