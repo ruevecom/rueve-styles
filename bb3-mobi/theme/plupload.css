@@ -36,15 +36,15 @@
 }
 
 .file-status.file-working {
-	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/images/plupload/throbber.gif');
+	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/plupload/throbber.gif');
 }
 
 .file-status.file-uploaded {
-	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/images/plupload/done.gif');
+	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/plupload/done.gif');
 }
 
 .file-status.file-error {
-	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/images/plupload/error.gif');
+	background: url('http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/plupload/error.gif');
 }
 
 .file-status {

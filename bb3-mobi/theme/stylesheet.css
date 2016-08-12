@@ -34,13 +34,13 @@ hr { border-top: 1px solid #CCCCCC; margin: 2px 0; display: block; clear: both; 
 	padding: 3px;
 }
 .headerbar {
-	background: #12A3EB url("http://cdn.ru-eve.com/styles/bb3-mobi/images/bg_header.gif") repeat-x 0 0;
+	background: #12A3EB url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/theme/images/bg_header.gif") repeat-x 0 0;
 	color: #fff;
 	margin-bottom: 2px;
 	padding: 2px;
 }
 .site_logo {
-	background: url("http://cdn.ru-eve.com/styles/bb3-mobi/images/site_logo.png") no-repeat 0 0;
+	background: url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/theme/images/site_logo.png") no-repeat 0 0;
 	display: block;
 	float: left;
 	margin-right: 2px;
@@ -53,12 +53,12 @@ hr { border-top: 1px solid #CCCCCC; margin: 2px 0; display: block; clear: both; 
 	margin-bottom: 2px;
 }
 .forabg, .forumbg {
-	background: #EEF5F9 url("http://cdn.ru-eve.com/styles/bb3-mobi/images/gradient.gif") repeat-x;
+	background: #EEF5F9 url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/gradient.gif") repeat-x;
 	margin: 2px 0;
 	clear: both;
 }
 .header {
-	background: #0076b1 url("http://cdn.ru-eve.com/styles/bb3-mobi/images/bg_list.gif") repeat-x 0 0;
+	background: #0076b1 url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/bg_list.gif") repeat-x 0 0;
 	color: #fff;
 	padding: 6px;
 }
@@ -192,7 +192,7 @@ ul.linklist:after,
 ----------------------------------------*/
 /* Quote block */
 blockquote {
-	background: #EBEADD url("http://cdn.ru-eve.com/styles/bb3-mobi/images/quote.gif") 6px 8px no-repeat;
+	background: #EBEADD url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/quote.gif") 6px 8px no-repeat;
 	border: 1px solid #DBDBCE;
 	font-size: 0.95em;
 	margin: 0.5em 1px 0 15px;
@@ -200,7 +200,7 @@ blockquote {
 	padding: 5px;
 }
 .rtl blockquote {
-	background-image: url("http://cdn.ru-eve.com/styles/bb3-mobi/images/quote_rtl.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/quote_rtl.gif");
 }
 blockquote blockquote {
 	/* Nested quotes */
@@ -277,7 +277,7 @@ th a:hover, .header a:hover, .header a:hover { color: #A8D8FF; }
 	border-top: 0.375em double #105289;
 }
 .button {
-	background: #EFEFEF url("http://cdn.ru-eve.com/styles/bb3-mobi/images/bg_button.gif") 0 0 repeat-x;
+	background: #EFEFEF url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/bg_button.gif") 0 0 repeat-x;
 	color: #D31141;
 	border: 1px solid #C7C3BF;
 	display: inline-block;
@@ -291,7 +291,7 @@ th a:hover, .header a:hover, .header a:hover { color: #A8D8FF; }
 }
 .button span { font-style: italic; }
 .button1, .button2, .button3 {
-	background: #FAFAFA url("http://cdn.ru-eve.com/styles/bb3-mobi/images/bg_button.gif");
+	background: #FAFAFA url("http://cdn.ru-eve.com/styles/bb3-mobi/theme/images/bg_button.gif");
 	border: 1px solid #666666;
 }
 .button1:hover, .button2:hover, .button3:hover {
