@@ -49,7 +49,7 @@ hr {
 
 .headerbar {
 	background-color: #12A3EB;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/bg_header.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/bg_header.gif");
 	color: #FFFFFF;
 }
 
@@ -59,12 +59,12 @@ hr {
 
 .forabg {
 	background-color: #0076b1;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/bg_list.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/bg_list.gif");
 }
 
 .forumbg {
 	background-color: #12A3EB;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/bg_header.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/bg_header.gif");
 }
 
 .panel {
@@ -187,12 +187,12 @@ dl.details dd {
 }
 
 .pagination li.next a, .pagination li.previous a, .pagination li.page-jump a {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icons_pagination.png");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icons_pagination.png");
 }
 
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_pages.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_pages.gif");
 }
 
 /* Miscellaneous styles
@@ -228,15 +228,15 @@ p.post-notice {
 }
 
 p.post-notice.deleted:before {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_topic_deleted.png");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_topic_deleted.png");
 }
 
 p.post-notice.unapproved:before {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_topic_unapproved.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_topic_unapproved.gif");
 }
 
 p.post-notice.reported:before, p.post-notice.error:before {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_topic_reported.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_topic_reported.gif");
 }
 
 /*
@@ -283,18 +283,18 @@ a:hover	{ color: #D31141; }
 
 /* Back to top of page */
 a.top {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_back_top.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_back_top.gif");
 }
 
 a.top2 {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_back_top.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_back_top.gif");
 }
 
 /* Arrow links  */
-a.arrow-up			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/arrow_up.gif"); }
-a.arrow-down		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/arrow_down.gif"); }
-a.arrow-left		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/arrow_left.gif"); }
-a.arrow-right		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/arrow_right.gif"); }
+a.arrow-up			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/arrow_up.gif"); }
+a.arrow-down		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/arrow_down.gif"); }
+a.arrow-left		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/arrow_left.gif"); }
+a.arrow-right		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/arrow_right.gif"); }
 
 a.arrow-up:hover {
 	background-color: transparent;
@@ -315,7 +315,7 @@ Colours and backgrounds for content.css
 
 ul.forums {
 	background-color: #eef5f9;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/gradient.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/gradient.gif");
 }
 
 ul.topiclist li {
@@ -332,11 +332,11 @@ ul.topiclist dd {
 }
 
 ul.topiclist li.row dt a.subforum.read {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/subforum_read.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/subforum_read.gif");
 }
 
 ul.topiclist li.row dt a.subforum.unread {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/subforum_unread.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/subforum_unread.gif");
 }
 
 li.row {
@@ -410,12 +410,12 @@ dl.faq dt {
 /* Quote block */
 blockquote {
 	background-color: #EBEADD;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/quote.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/quote.gif");
 	border-color:#DBDBCE;
 }
 
 .rtl blockquote {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/quote_rtl.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/quote_rtl.gif");
 }
 
 blockquote blockquote {
@@ -585,7 +585,7 @@ fieldset.polls dd div {
 }
 
 .online {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/en/icon_user_online.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/en/icon_user_online.gif");
 }
 
 dd.profile-warnings {
@@ -636,93 +636,93 @@ Colours and backgrounds for buttons.css
 
 /* Icon images
 ---------------------------------------- */
-.icon-acp					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_acp.gif"); }
-.icon-bookmark				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_bookmark.gif"); }
-.icon-bump					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_bump.gif"); }
-.icon-contact				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_pm.gif"); }
-.icon-delete-cookies		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_delete_cookies.gif"); }
-.icon-download				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_download.gif"); }
-.icon-faq					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_faq.gif"); }
-.icon-home					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_home.gif"); }
-.icon-logout				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_logout.gif"); }
-.icon-mark					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_mark.gif"); }
-.icon-mcp					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_mcp.gif"); }
-.icon-members				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_members.gif"); }
-.icon-notification			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_notification.gif"); }
-.icon-pages					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_pages.gif"); }
-.icon-pm					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_pm.gif"); }
-.icon-print					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_print.gif"); }
-.icon-profile				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_profile.gif"); }
-.icon-register				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_register.gif"); }
-.icon-search, .responsive-search a	{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_search.gif"); }
-.icon-search-active			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/subforum_read.gif"); }
-.icon-search-advanced		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_search_adv.gif"); }
-.icon-search-new			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/subforum_unread.gif"); }
-.icon-search-self			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_topic_latest.gif"); }
-.icon-search-unanswered		{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_post_target.gif"); }
-.icon-search-unread			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/subforum_unread.gif"); }
-.icon-sendemail				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_sendemail.gif"); }
-.icon-subscribe				{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_subscribe.gif"); }
-.icon-team					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_team.gif"); }
-.icon-ucp					{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_ucp.gif"); }
-.icon-unsubscribe			{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_unsubscribe.gif"); }
+.icon-acp					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_acp.gif"); }
+.icon-bookmark				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_bookmark.gif"); }
+.icon-bump					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_bump.gif"); }
+.icon-contact				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_pm.gif"); }
+.icon-delete-cookies		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_delete_cookies.gif"); }
+.icon-download				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_download.gif"); }
+.icon-faq					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_faq.gif"); }
+.icon-home					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_home.gif"); }
+.icon-logout				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_logout.gif"); }
+.icon-mark					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_mark.gif"); }
+.icon-mcp					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_mcp.gif"); }
+.icon-members				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_members.gif"); }
+.icon-notification			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_notification.gif"); }
+.icon-pages					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_pages.gif"); }
+.icon-pm					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_pm.gif"); }
+.icon-print					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_print.gif"); }
+.icon-profile				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_profile.gif"); }
+.icon-register				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_register.gif"); }
+.icon-search, .responsive-search a	{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_search.gif"); }
+.icon-search-active			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/subforum_read.gif"); }
+.icon-search-advanced		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_search_adv.gif"); }
+.icon-search-new			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/subforum_unread.gif"); }
+.icon-search-self			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_topic_latest.gif"); }
+.icon-search-unanswered		{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_post_target.gif"); }
+.icon-search-unread			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/subforum_unread.gif"); }
+.icon-sendemail				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_sendemail.gif"); }
+.icon-subscribe				{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_subscribe.gif"); }
+.icon-team					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_team.gif"); }
+.icon-ucp					{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_ucp.gif"); }
+.icon-unsubscribe			{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_unsubscribe.gif"); }
 
 /* Profile & navigation icons */
-.contact-icon													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icons_contact.png"); }
-.icon-button:before, .dropdown-select:after						{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icons_button.png"); }
+.contact-icon													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icons_contact.png"); }
+.icon-button:before, .dropdown-select:after						{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icons_button.png"); }
 
 /* Forum icons & Topic icons */
-.global_read													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read.gif"); }
-.global_read_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_mine.gif"); }
-.global_read_locked												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_locked.gif"); }
-.global_read_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_locked_mine.gif"); }
-.global_unread													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread.gif"); }
-.global_unread_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_mine.gif"); }
-.global_unread_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_locked.gif"); }
-.global_unread_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_locked_mine.gif"); }
+.global_read													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read.gif"); }
+.global_read_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_mine.gif"); }
+.global_read_locked												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_locked.gif"); }
+.global_read_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_locked_mine.gif"); }
+.global_unread													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread.gif"); }
+.global_unread_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_mine.gif"); }
+.global_unread_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_locked.gif"); }
+.global_unread_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_locked_mine.gif"); }
 
-.announce_read													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read.gif"); }
-.announce_read_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_mine.gif"); }
-.announce_read_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_locked.gif"); }
-.announce_read_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_read_locked_mine.gif"); }
-.announce_unread												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread.gif"); }
-.announce_unread_mine											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_mine.gif"); }
-.announce_unread_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_locked.gif"); }
-.announce_unread_locked_mine									{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/announce_unread_locked_mine.gif"); }
+.announce_read													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read.gif"); }
+.announce_read_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_mine.gif"); }
+.announce_read_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_locked.gif"); }
+.announce_read_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_read_locked_mine.gif"); }
+.announce_unread												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread.gif"); }
+.announce_unread_mine											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_mine.gif"); }
+.announce_unread_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_locked.gif"); }
+.announce_unread_locked_mine									{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/announce_unread_locked_mine.gif"); }
 
-.forum_link														{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_link.gif"); }
-.forum_read														{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_read.gif"); }
-.forum_read_locked												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_read_locked.gif"); }
-.forum_read_subforum											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_read_subforum.gif"); }
-.forum_unread													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_unread.gif"); }
-.forum_unread_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_unread_locked.gif"); }
-.forum_unread_subforum											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/forum_unread_subforum.gif"); }
+.forum_link														{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_link.gif"); }
+.forum_read														{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_read.gif"); }
+.forum_read_locked												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_read_locked.gif"); }
+.forum_read_subforum											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_read_subforum.gif"); }
+.forum_unread													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_unread.gif"); }
+.forum_unread_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_unread_locked.gif"); }
+.forum_unread_subforum											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/forum_unread_subforum.gif"); }
 
-.sticky_read													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_read.gif"); }
-.sticky_read_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_read_mine.gif"); }
-.sticky_read_locked												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_read_locked.gif"); }
-.sticky_read_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_read_locked_mine.gif"); }
-.sticky_unread													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_unread.gif"); }
-.sticky_unread_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_unread_mine.gif"); }
-.sticky_unread_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_unread_locked.gif"); }
-.sticky_unread_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/sticky_unread_locked_mine.gif"); }
+.sticky_read													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_read.gif"); }
+.sticky_read_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_read_mine.gif"); }
+.sticky_read_locked												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_read_locked.gif"); }
+.sticky_read_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_read_locked_mine.gif"); }
+.sticky_unread													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_unread.gif"); }
+.sticky_unread_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_unread_mine.gif"); }
+.sticky_unread_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_unread_locked.gif"); }
+.sticky_unread_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/sticky_unread_locked_mine.gif"); }
 
-.topic_moved													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_moved.gif"); }
-.topic_read														{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read.gif"); }
-.topic_read_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read_mine.gif"); }
-.topic_read_hot													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read_hot.gif"); }
-.topic_read_hot_mine											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read_hot_mine.gif"); }
-.topic_read_locked												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read_locked.gif"); }
-.topic_read_locked_mine											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read_locked_mine.gif"); }
-.topic_unread													{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread.gif"); }
-.topic_unread_mine												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread_mine.gif"); }
-.topic_unread_hot												{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread_hot.gif"); }
-.topic_unread_hot_mine											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread_hot_mine.gif"); }
-.topic_unread_locked											{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread_locked.gif"); }
-.topic_unread_locked_mine										{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread_locked_mine.gif"); }
+.topic_moved													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_moved.gif"); }
+.topic_read														{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read.gif"); }
+.topic_read_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read_mine.gif"); }
+.topic_read_hot													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read_hot.gif"); }
+.topic_read_hot_mine											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read_hot_mine.gif"); }
+.topic_read_locked												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read_locked.gif"); }
+.topic_read_locked_mine											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read_locked_mine.gif"); }
+.topic_unread													{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread.gif"); }
+.topic_unread_mine												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread_mine.gif"); }
+.topic_unread_hot												{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread_hot.gif"); }
+.topic_unread_hot_mine											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread_hot_mine.gif"); }
+.topic_unread_locked											{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread_locked.gif"); }
+.topic_unread_locked_mine										{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread_locked_mine.gif"); }
 
-.pm_read														{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_read.gif"); }
-.pm_unread														{ background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/topic_unread.gif"); }
+.pm_read														{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_read.gif"); }
+.pm_unread														{ background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/topic_unread.gif"); }
 
 /*
 --------------------------------------------------------------
@@ -1016,7 +1016,7 @@ fieldset.quick-login input.inputbox {
 a.button1, input.button1, input.button3, a.button2, input.button2 {
 	color: #000;
 	background-color: #FAFAFA;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/bg_button.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/bg_button.gif");
 }
 
 a.button1, input.button1 {
@@ -1050,7 +1050,7 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 }
 
 input.search {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/icon_textbox_search.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/icon_textbox_search.gif");
 }
 
 input.disabled {
@@ -1064,7 +1064,7 @@ input.disabled {
 	border-color: #999999;
 }
 .phpbb_alert .alert_close {
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/alert_close.png");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/alert_close.png");
 }
 #darken {
 	background-color: #000000;
@@ -1072,7 +1072,7 @@ input.disabled {
 
 #loading_indicator {
 	background-color: #000000;
-	background-image: url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/images/loading.gif");
+	background-image: url("http://cdn.ru-eve.com/styles/prosilver/theme/images/loading.gif");
 }
 
 .dropdown-extended ul li {

@@ -6,20 +6,12 @@
 	Modified by:		phpBB Limited ( https://www.phpbb.com/ )
     --------------------------------------------------------------
 */
-/*
-	@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css"); - ORIG
 
-	@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/common.css"); - GIT
-
-	replace `https://rawgit.com/ruevecom/rueve-styles/master/` with `http://cdn.ru-eve.com/styles/`
-
-	+fix in `imageset.css`, `plupload.css` and `colours.css`.
-*/
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/common.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/links.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/content.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/buttons.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/cp.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/forms.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/colours.css");
-@import url("https://rawgit.com/ruevecom/rueve-styles/master/prosilver/theme/imageset.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/common.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/links.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/content.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/buttons.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/cp.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/forms.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/colours.css");
+@import url("http://cdn.ru-eve.com/styles/prosilver/theme/imageset.css");
